@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import proyecto.Arbol;
+
 public class Floristeria {
 	static Scanner entrada = new Scanner(System.in);
 
-	private static List<Arbol> arboles = new ArrayList();
-	private static List<Decoracion> decoraciones = new ArrayList();
-	private static List<Flor> flores = new ArrayList();
+	private List<Arbol> arboles = new ArrayList();
+	private List<Decoracion> decoraciones = new ArrayList();
+	private List<Flor> flores = new ArrayList();
 
 	private String nombre;
 
@@ -21,8 +23,65 @@ public class Floristeria {
 		return nombre;
 	}
 
+	public Arbol anadirArbol() {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Nombre del árbol: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Precio del árbol: ");
+		double precio = entrada.nextDouble();
+		System.out.println("Altura del árbol: ");
+		double altura = entrada.nextDouble();
+		
+		Arbol arbol = new Arbol(nombre,precio,altura);
+		arboles.add(arbol);
+		
+		return arbol;
+	}
+	
+	public Flor anadirFlor() {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Nombre de la flor: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Color de la flor: ");
+		String color = entrada.nextLine();
+		System.out.println("Precio de la flor: ");
+		double precio = entrada.nextDouble();
+		
+		Flor flor = new Flor(nombre,precio, color);
+		flores.add(flor);
+		
+		return flor;
+	}
+	
+	public Decoracion anadirDecoracion() {
+		Scanner entrada = new Scanner(System.in);
+		
+		boolean elegido = false;
+		System.out.println("Nombre de la decoración: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Precio de la decoración: ");
+		double precio = entrada.nextDouble();
+		String materiales;
+		do {
+			System.out.println("Elija material (Madera o Plástico) ");
+			materiales = entrada.nextLine();
+			if(materiales.equalsIgnoreCase("madera") || materiales.equalsIgnoreCase("plástico")) {
+				elegido = true;
+			}else {
+				System.out.println("opcion no correcta");
+			}
+		}while(!elegido);
+				
+		Decoracion decoracion = new Decoracion(nombre,precio,materiales);
+		decoraciones.add(decoracion);
+		
+		return decoracion;
+	}
+	
 	// método ver árboles
-	public static void mostrarArboles() {
+	public void mostrarArboles() {
 
 		if (arboles.size() > 0)
 			for (Arbol arbolesVer : arboles) {
@@ -34,7 +93,7 @@ public class Floristeria {
 	}
 
 	// método ver flores
-	public static void mostrarFlores() {
+	public void mostrarFlores() {
 
 		if (flores.size() > 0)
 			for (Flor floresVer : flores) {
@@ -46,7 +105,7 @@ public class Floristeria {
 	}
 
 	// método ver decoraciones
-	public static void mostrarDecoraciones() {
+	public void mostrarDecoraciones() {
 
 		if (decoraciones.size() > 0)
 			for (Decoracion decoracionesVer : decoraciones) {
@@ -58,7 +117,7 @@ public class Floristeria {
 	}
 
 	// método ver stock
-	public static void mostrarStock() {
+	public void mostrarStock() {
 		int opcion = 0;
 		
 		do {
@@ -118,7 +177,7 @@ public class Floristeria {
 
 	}
 	
-	public static void cantidadStockArboles() {
+	public void cantidadStockArboles() {
 		
 		System.out.println("Introducir el producto: ");
 		String producto = entrada.nextLine();
@@ -135,7 +194,7 @@ public class Floristeria {
 		}
 	}
 	
-	public static void cantidadStockFlores() {
+	public void cantidadStockFlores() {
 		
 		System.out.println("Introducir el producto: ");
 		String producto = entrada.nextLine();
@@ -152,7 +211,7 @@ public class Floristeria {
 		}
 	}
 	
-	public static void cantidadStockDecoraciones() {
+	public void cantidadStockDecoraciones() {
 		
 		System.out.println("Introducir el producto: ");
 		String producto = entrada.nextLine();
@@ -169,7 +228,7 @@ public class Floristeria {
 		}
 	}
 	
-	public static void cantidadStockTotal() {
+	public void cantidadStockTotal() {
 		
 		int opcion = 0;
 		

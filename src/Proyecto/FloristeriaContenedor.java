@@ -7,10 +7,10 @@ public class FloristeriaContenedor {
 	
 	static Scanner entrada = new Scanner(System.in);
 	
-	private static ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
+	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
 	
 	//metodo crear floristería
-	public void crearFloristeria(Floristeria floristeria1) {
+	public void crearFloristeria() {
 		
 		String nombre;
 		
@@ -30,7 +30,8 @@ public class FloristeriaContenedor {
 			}
 		}
 		
-		floristeria1 = new Floristeria(nombre);
+		
+		Floristeria floristeria1 = new Floristeria(nombre);
 		
 		floristerias.add(floristeria1);
 		

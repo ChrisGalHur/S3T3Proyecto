@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class FloristeriaContenedor {
 	
-	static Scanner entrada = new Scanner(System.in);
+	private Scanner entrada = new Scanner(System.in);
 	
 	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
 	
@@ -129,21 +129,5 @@ public class FloristeriaContenedor {
 			} while (opcion != 0);
 
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

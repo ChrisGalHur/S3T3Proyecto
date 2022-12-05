@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import proyecto.Arbol;
-
 public class Floristeria {
 	static Scanner entrada = new Scanner(System.in);
 
@@ -19,6 +17,11 @@ public class Floristeria {
 		this.nombre = nombre;
 	}
 
+	//constructor vacío para la llamada desde el Main
+	public Floristeria() {
+		
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -81,7 +84,7 @@ public class Floristeria {
 	}
 	
 	// método ver árboles
-	public void mostrarArboles() {
+	private void mostrarArboles() {
 
 		if (arboles.size() > 0)
 			for (Arbol arbolesVer : arboles) {
@@ -93,7 +96,7 @@ public class Floristeria {
 	}
 
 	// método ver flores
-	public void mostrarFlores() {
+	private void mostrarFlores() {
 
 		if (flores.size() > 0)
 			for (Flor floresVer : flores) {
@@ -105,7 +108,7 @@ public class Floristeria {
 	}
 
 	// método ver decoraciones
-	public void mostrarDecoraciones() {
+	private void mostrarDecoraciones() {
 
 		if (decoraciones.size() > 0)
 			for (Decoracion decoracionesVer : decoraciones) {
@@ -117,175 +120,153 @@ public class Floristeria {
 	}
 
 	// método ver stock
-	public void mostrarStock() {
-		int opcion = 0;
-		
-		do {
+		public void stockFloristeria() {
+			int opcion = 0;
+			
+			do {
 
-			try {
+				try {
 
-				System.out.println("Escoge una opción: \n" 
-						+ "1. Mostrar árboles. \n" 
-						+ "2. Mostrar flores. \n"
-						+ "3. Mostrar decoraciones. \n" 
-						+ "4. Mostrar todos los productos. \n" 
-						+ "0. Salir.");
+					System.out.println(" \n" 
+							+ "Escoge una opción: \n" 
+							+ "1. Mostrar árboles. \n" 
+							+ "2. Mostrar flores. \n"
+							+ "3. Mostrar decoraciones. \n" 
+							+ "4. Mostrar todos los productos. \n" 
+							+ "0. Volver al menú principal.");
 
-				opcion = Integer.parseInt(entrada.nextLine());
+					opcion = Integer.parseInt(entrada.next());
 
-				switch (opcion) {
+					switch (opcion) {
 
-				case 1:
-					System.out.println("INVENTARIO DE ÁRBOLES");
-					mostrarArboles();
-					break;
+					case 1:
+						System.out.println("INVENTARIO DE ÁRBOLES");
+						mostrarArboles();
+						break;
 
-				case 2:
-					System.out.println("INVENTARIO DE FLORES");
-					mostrarFlores();
-					break;
+					case 2:
+						System.out.println("INVENTARIO DE FLORES");
+						mostrarFlores();
+						break;
 
-				case 3:
-					System.out.println("INVENTARIO DE DECORACIONES");
-					mostrarDecoraciones();
-					break;
+					case 3:
+						System.out.println("INVENTARIO DE DECORACIONES");
+						mostrarDecoraciones();
+						break;
 
-				case 4:
-					System.out.println("INVENTARIO DE ÁRBOLES");
-					mostrarArboles();
-					System.out.println("INVENTARIO DE FLORES");
-					mostrarFlores();
-					System.out.println("INVENTARIO DE DECORACIONES");
-					mostrarDecoraciones();
-					break;
+					case 4:
+						System.out.println("INVENTARIO DE ÁRBOLES");
+						mostrarArboles();
+						System.out.println("INVENTARIO DE FLORES");
+						mostrarFlores();
+						System.out.println("INVENTARIO DE DECORACIONES");
+						mostrarDecoraciones();
+						break;
 
-				case 0:
-					System.out.println("Adios.");
-					break;
+					case 0:
+						
+						break;
 
-				default:
-					System.out.println("ERROR opción no aceptada.");
-					break;
+					default:
+						System.out.println("ERROR opción no aceptada.");
+						break;
 
+					}
+
+				} catch (Exception ex) {
+					System.out.println("ERROR comando introducido no valido.");
 				}
 
-			} catch (Exception ex) {
-				System.out.println("ERROR comando introducido no valido.");
-			}
+			} while (opcion != 0);
 
-		} while (opcion != 0);
-
-	}
-	
-	public void cantidadStockArboles() {
-		
-		System.out.println("Introducir el producto: ");
-		String producto = entrada.nextLine();
-		
-		long cantidad;
-		
-		if (arboles.size() > 0) {
-		cantidad = arboles.stream().filter(cantidadArboles -> cantidadArboles.getNombre().equalsIgnoreCase(producto)).count();
-		
-		System.out.println("Hay " + cantidad + " arboles.");
-		
-		} else {
-			System.out.println("ERROR no hay árboles en Stock");
 		}
-	}
-	
-	public void cantidadStockFlores() {
 		
-		System.out.println("Introducir el producto: ");
-		String producto = entrada.nextLine();
-		
-		long cantidad;
-		
-		if (flores.size() > 0) {
-		cantidad = flores.stream().filter(cantidadFlores -> cantidadFlores.getNombre().equalsIgnoreCase(producto)).count();
-		
-		System.out.println("Hay " + cantidad + " flores.");
-		
-		} else {
-			System.out.println("ERROR no hay flores en Stock");
+		private void cantidadStockArboles() {
+			
+			int cantidadArboles = arboles.size();
+			
+			System.out.println("Hay:" + cantidadArboles + " árboles.");
+			
 		}
-	}
-	
-	public void cantidadStockDecoraciones() {
 		
-		System.out.println("Introducir el producto: ");
-		String producto = entrada.nextLine();
-		
-		long cantidad;
-		
-		if (decoraciones.size() > 0) {
-		cantidad = decoraciones.stream().filter(cantidadDecoraciones -> cantidadDecoraciones.getNombre().equalsIgnoreCase(producto)).count();
-		
-		System.out.println("Hay " + cantidad + " decoraciones.");
-		
-		} else {
-			System.out.println("ERROR no hay decoraciones en Stock");
+		private void cantidadStockFlores() {
+			
+			int cantidadFlores = flores.size();
+			
+			System.out.println("Hay: " + cantidadFlores + " flores.");
 		}
-	}
-	
-	public void cantidadStockTotal() {
 		
-		int opcion = 0;
+		private void cantidadStockDecoraciones() {
+			
+			int cantidadDecoraciones = decoraciones.size();
+			
+			System.out.println("Hay: " + cantidadDecoraciones + " decoraciones en la tienda.");
+		}
 		
-		do {
+		public void printarStockAmbCuantitats() {
+			
+			int opcion = 0;
+			
+			do {
 
-			try {
+				try {
 
-				System.out.println("Escoge una opción: \n" 
-						+ "1. Mostrar stock de árboles. \n" 
-						+ "2. Mostrar stock de flores. \n"
-						+ "3. Mostrar stock de decoraciones. \n" 
-						+ "4. Mostrar todos los stocks. \n" 
-						+ "0. Salir.");
+					System.out.println(" \n" 
+							+ "Escoge una opción: \n" 
+							+ "1. Mostrar stock de árboles. \n" 
+							+ "2. Mostrar stock de flores. \n"
+							+ "3. Mostrar stock de decoraciones. \n" 
+							+ "4. Mostrar todos los stocks. \n" 
+							+ "0. Volver al menú principal.");
 
-				opcion = Integer.parseInt(entrada.nextLine());
+					opcion = Integer.parseInt(entrada.next());
 
-				switch (opcion) {
+					switch (opcion) {
 
-				case 1:
-					System.out.println("STOCK DE ÁRBOLES");
-					cantidadStockArboles();
-					break;
+					case 1:
+						System.out.println("STOCK DE ÁRBOLES");
+						cantidadStockArboles();
+						break;
 
-				case 2:
-					System.out.println("STOCK DE FLORES");
-					cantidadStockFlores();
-					break;
+					case 2:
+						System.out.println("STOCK DE FLORES");
+						cantidadStockFlores();
+						break;
 
-				case 3:
-					System.out.println("STOCK DE DECORACIONES");
-					cantidadStockDecoraciones();
-					break;
+					case 3:
+						System.out.println("STOCK DE DECORACIONES");
+						cantidadStockDecoraciones();
+						break;
 
-				case 4:
-					System.out.println("STOCK DE ÁRBOLES");
-					cantidadStockArboles();
-					System.out.println("STOCK DE FLORES");
-					cantidadStockFlores();
-					System.out.println("STOCK DE DECORACIONES");
-					cantidadStockDecoraciones();
-					break;
+					case 4:
+						System.out.println("STOCK DE ÁRBOLES");
+						cantidadStockArboles();
+						System.out.println("STOCK DE FLORES");
+						cantidadStockFlores();
+						System.out.println("STOCK DE DECORACIONES");
+						cantidadStockDecoraciones();
+						break;
 
-				case 0:
-					System.out.println("Adios.");
-					break;
+					case 0:
+						
+						break;
 
-				default:
-					System.out.println("ERROR opción no aceptada.");
-					break;
+					default:
+						System.out.println("ERROR opción no aceptada.");
+						break;
+					}
 
+				} catch (Exception ex) {
+					System.out.println("ERROR comando introducido no valido.");
 				}
 
-			} catch (Exception ex) {
-				System.out.println("ERROR comando introducido no valido.");
-			}
+			} while (opcion != 0);
 
-		} while (opcion != 0);
+		}
 
-	}
+		@Override
+		public String toString() {
+			return "Floristeria " + nombre ;
+		}
+			
 }

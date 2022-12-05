@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Floristeria {
+
 	private Scanner entrada = new Scanner(System.in);
+
 
 	private List<Arbol> arboles = new ArrayList();
 	private List<Decoracion> decoraciones = new ArrayList();
@@ -23,12 +25,71 @@ public class Floristeria {
 	public Floristeria() {
 		
 	}
+	
 
 	//getters
+
 	public String getNombre() {
 		return nombre;
 	}
 
+	public Arbol anadirArbol() {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Nombre del árbol: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Precio del árbol: ");
+		double precio = entrada.nextDouble();
+		System.out.println("Altura del árbol: ");
+		double altura = entrada.nextDouble();
+		
+		Arbol arbol = new Arbol(nombre,precio,altura);
+		arboles.add(arbol);
+		
+		return arbol;
+	}
+	
+	public Flor anadirFlor() {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Nombre de la flor: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Color de la flor: ");
+		String color = entrada.nextLine();
+		System.out.println("Precio de la flor: ");
+		double precio = entrada.nextDouble();
+		
+		Flor flor = new Flor(nombre,precio, color);
+		flores.add(flor);
+		
+		return flor;
+	}
+	
+	public Decoracion anadirDecoracion() {
+		Scanner entrada = new Scanner(System.in);
+		
+		boolean elegido = false;
+		System.out.println("Nombre de la decoración: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Precio de la decoración: ");
+		double precio = entrada.nextDouble();
+		String materiales;
+		do {
+			System.out.println("Elija material (Madera o Plástico) ");
+			materiales = entrada.nextLine();
+			if(materiales.equalsIgnoreCase("madera") || materiales.equalsIgnoreCase("plástico")) {
+				elegido = true;
+			}else {
+				System.out.println("opcion no correcta");
+			}
+		}while(!elegido);
+				
+		Decoracion decoracion = new Decoracion(nombre,precio,materiales);
+		decoraciones.add(decoracion);
+		
+		return decoracion;
+	}
+	
 	// método ver árboles
 	private void mostrarArboles() {
 
@@ -66,6 +127,7 @@ public class Floristeria {
 	}
 
 	// método ver stock
+
 	public void stockFloristeria() {
 		int opcion = 0;
 		
@@ -117,13 +179,11 @@ public class Floristeria {
 					System.out.println("ERROR opción no aceptada.");
 					break;
 
+
 				}
 
-			} catch (Exception ex) {
-				System.out.println("ERROR comando introducido no valido.");
-			}
+			} while (opcion != 0);
 
-		} while (opcion != 0);
 
 	}
 	
@@ -150,9 +210,16 @@ public class Floristeria {
 	}
 	
 	public void printarStockAmbCuantitats() {
+
 		
-		int opcion = 0;
+		private void cantidadStockDecoraciones() {
+			
+			int cantidadDecoraciones = decoraciones.size();
+			
+			System.out.println("Hay: " + cantidadDecoraciones + " decoraciones en la tienda.");
+		}
 		
+
 		do {
 
 			try {
@@ -200,13 +267,13 @@ public class Floristeria {
 				default:
 					System.out.println("ERROR opción no aceptada.");
 					break;
+
 				}
 
-			} catch (Exception ex) {
-				System.out.println("ERROR comando introducido no valido.");
-			}
+			} while (opcion != 0);
 
-		} while (opcion != 0);
+		}
+
 
 	}
 
@@ -216,4 +283,5 @@ public class Floristeria {
 	}
 	
 	
+
 }

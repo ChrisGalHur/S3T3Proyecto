@@ -11,7 +11,7 @@ public class FloristeriaContenedor {
 	
 	//metodo crear floristería
 	private void crearFloristeria() {
-		
+		 
 		String nombre;
 		
 		System.out.println("Introducir nombre para la nueva floristería: ");

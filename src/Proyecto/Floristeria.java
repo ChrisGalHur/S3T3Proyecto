@@ -12,7 +12,7 @@ public class Floristeria {
 	
 	//atributos
 	private String nombre;
-
+ 
 	//constructor para objetos
 	public Floristeria(String nombre) {
 		this.nombre = nombre;

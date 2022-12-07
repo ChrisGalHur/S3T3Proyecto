@@ -3,7 +3,7 @@ package Proyecto;
 import java.util.Scanner;
 
 public class Menu {
-     
+       
 	static int menuFloristeria() {
 		Scanner entrada = new Scanner(System.in);
 		int opcion;

@@ -10,8 +10,10 @@ public class FloristeriaContenedor {
 	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
 	
 	//metodo crear floristería
-	public void crearFloristeria() {
-		
+
+	private void crearFloristeria() {
+		 
+
 		String nombre;
 		
 		System.out.println("Introducir nombre para la nueva floristería: ");

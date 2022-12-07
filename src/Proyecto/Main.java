@@ -11,7 +11,7 @@ public class Main {
 		FloristeriaContenedor llamadaObjetosFloristeriaContenedor = new FloristeriaContenedor();
 		Floristeria floristeria;
 		int opcion = 0, opcionFloristeria = 0, opcionProductos = 0, opcionStocksCantidades = 0, opcionStocks = 0;
-		 
+		  
 		do {
 			try {
 				opcion = Menu.menuFloristeria();

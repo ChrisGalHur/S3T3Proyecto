@@ -9,7 +9,7 @@ public class Floristeria {
 	private List<Arbol> arboles = new ArrayList<Arbol>();
 	private List<Decoracion> decoraciones = new ArrayList<Decoracion>();
 	private List<Flor> flores = new ArrayList<Flor>();
-	
+	 
 	//atributos
 	private String nombre;
  

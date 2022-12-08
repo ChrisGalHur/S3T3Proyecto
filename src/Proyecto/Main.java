@@ -63,7 +63,7 @@ public class Main {
 										
 									case 2:
 										
-//										Floristeria.eliminarArbol(floristeria);
+										Floristeria.eliminarArbol(floristeria);
 										//método retirar árbol
 										break;
 										
@@ -74,18 +74,18 @@ public class Main {
 										break;
 										
 									case 4:
-//										Floristeria.eliminarDecoracion(floristeria);
+										Floristeria.eliminarDecoracion(floristeria);
 										//método retirar decoración
 										break;
 										
 									case 5:
 										
-										//Flor flor = floristeria.anadirFlor();
+//										Flor flor = floristeria.anadirFlor();
 										//ticket.floresTicket(flor);
 										break;
 										
 									case 6:
-//										Floristeria.eliminarFlor(floristeria);
+										Floristeria.eliminarFlor(floristeria);
 										//método retirar flor
 										break;
 										

@@ -23,7 +23,7 @@ public class Flor extends Producto{
 	
 	@Override
 	public String toString() {
-		return "(id:" + this.getIdProducto() + ") Flor | Nombre: " + this.getNombre() + " | Precio: " + this.getPrecio() + "€ | Color: " + this.color;
+		return "(id:" + super.getIdProducto() + ") Flor | Nombre: " + super.getNombre() + " | Precio: " + super.getPrecio() + "€ | Color: " + this.color;
 	}
 	
 }

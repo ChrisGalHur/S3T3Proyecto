@@ -7,7 +7,6 @@ public class Menu {
 	static int menuFloristeria() {
 		Scanner entrada = new Scanner(System.in);
 		int opcion;
-		 
 
 		System.out.println(" \n"
 				+ "PANEL DE CONTROL DE FLORISTERIAS: \n" 
@@ -34,7 +33,7 @@ public class Menu {
 				+ "2.  Mostrar stock. \n"
 				+ "3.  Mostrar cantidades en stock. \n"
 				+ "4.  Mostrar valor total de la floristería. \n"
-				+ "5.  Crear tickets. \n"
+				+ "5.  Realizar compra. \n"
 				+ "6.  Mostrar ventas anteriores. \n"
 				+ "7.  Ganancias en ventas. \n"
 				+ "8.  Ver tickets anteriores. \n"

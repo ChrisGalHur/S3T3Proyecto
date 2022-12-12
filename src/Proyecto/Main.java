@@ -17,6 +17,7 @@ public class Main {
 		Floristeria floristeria;
 		int opcion = 0, opcionFloristeria = 0, opcionProductos = 0, opcionStocksCantidades = 0, opcionStocks = 0;
 
+<<<<<<< HEAD
 
 		do {
 			try {
@@ -269,5 +270,6 @@ public class Main {
 			
 		} while (opcion != 0);
 	}
+
 }
 

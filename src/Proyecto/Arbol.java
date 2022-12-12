@@ -23,7 +23,7 @@ public class Arbol extends Producto{
 
 	@Override
 	public String toString() {
-		return "(id:" + this.getIdProducto() + ") Arbol | Nombre: " + this.getNombre() + " | Precio: " + this.getPrecio() + "€ | Altura: " + this.altura + "cm";
+		return "(id:" + super.getIdProducto() + ") Arbol | Nombre: " + super.getNombre() + " | Precio: " + super.getPrecio() + "€ | Altura: " + this.altura + "cm";
 	}
 
 }

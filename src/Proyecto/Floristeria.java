@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Floristeria {
 
-	static Scanner entrada = new Scanner(System.in);
+	private Scanner entrada = new Scanner(System.in);
  
 	//Atributos
 	private String nombre;

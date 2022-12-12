@@ -7,21 +7,25 @@ public class Menu {
 	static int menuFloristeria() {
 		Scanner entrada = new Scanner(System.in);
 		int opcion;
+
+		
 		System.out.println(" \n"
 				+ "PANEL DE CONTROL DE FLORISTERIAS: \n" 
-				+ "1. Crear floristerías. \n" 
-				+ "2. Mostrar floristerías. \n"
-				+ "3. Eliminar floristerías. \n"
-				+ "4. Opciones de floristería \n" 
-				+ "0. Salir del programa \n");
+				+ "1. Crear floristería. \n" 
+				+ "2. Mostrar floristería. \n"
+				+ "3. Eliminar floristería. \n"
+				+ "4. Opciones de floristería. \n" 
+				+ "0. Salir del programa. \n");
 		
 		opcion = Integer.parseInt(entrada.next());
 		
 		return opcion;
 	}
 	
+		
 	static int menuOpcionesFloristeria() {
-		Scanner entrada = new Scanner(System.in);
+		Scanner entrada = new Scanner(System.in); 
+		
 		int opcion;
 		
 		System.out.println(" \n"
@@ -43,6 +47,7 @@ public class Menu {
 	
 	static int menuProductos() {
 		Scanner entrada = new Scanner(System.in);
+		
 		int opcion;
 		
 		System.out.println(" \n"
@@ -96,4 +101,6 @@ public class Menu {
 		
 		return opcion;
 	}
+
 }
+

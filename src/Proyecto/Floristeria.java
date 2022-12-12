@@ -6,12 +6,13 @@ import java.util.Scanner;
 
 public class Floristeria {
 
-	//private Scanner entrada = new Scanner(System.in);
 
-
+	private Scanner entrada = new Scanner(System.in);
+ 
 	private List<Arbol> arboles = new ArrayList();
 	private List<Decoracion> decoraciones = new ArrayList();
 	private List<Flor> flores = new ArrayList();
+
 	
 	//atributos
 	private String nombre;
@@ -25,71 +26,12 @@ public class Floristeria {
 	public Floristeria() {
 		
 	}
-	
 
 	//getters
-
 	public String getNombre() {
 		return nombre;
 	}
 
-	public Arbol anadirArbol() {
-		Scanner entrada = new Scanner(System.in);
-		
-		System.out.println("Nombre del árbol: ");
-		String nombre = entrada.nextLine();
-		System.out.println("Precio del árbol: ");
-		double precio = entrada.nextDouble();
-		System.out.println("Altura del árbol: ");
-		double altura = entrada.nextDouble();
-		
-		Arbol arbol = new Arbol(nombre,precio,altura);
-		arboles.add(arbol);
-		
-		return arbol;
-	}
-	
-	public Flor anadirFlor() {
-		Scanner entrada = new Scanner(System.in);
-		
-		System.out.println("Nombre de la flor: ");
-		String nombre = entrada.nextLine();
-		System.out.println("Color de la flor: ");
-		String color = entrada.nextLine();
-		System.out.println("Precio de la flor: ");
-		double precio = entrada.nextDouble();
-		
-		Flor flor = new Flor(nombre,precio, color);
-		flores.add(flor);
-		
-		return flor;
-	}
-	
-	public Decoracion anadirDecoracion() {
-		Scanner entrada = new Scanner(System.in);
-		
-		boolean elegido = false;
-		System.out.println("Nombre de la decoración: ");
-		String nombre = entrada.nextLine();
-		System.out.println("Precio de la decoración: ");
-		double precio = entrada.nextDouble();
-		String materiales;
-		do {
-			System.out.println("Elija material (Madera o Plástico) ");
-			materiales = entrada.nextLine();
-			if(materiales.equalsIgnoreCase("madera") || materiales.equalsIgnoreCase("plástico")) {
-				elegido = true;
-			}else {
-				System.out.println("opcion no correcta");
-			}
-		}while(!elegido);
-				
-		Decoracion decoracion = new Decoracion(nombre,precio,materiales);
-		decoraciones.add(decoracion);
-		
-		return decoracion;
-	}
-	
 	// método ver árboles
 	public void mostrarArboles(Floristeria mostrarArboles) {
 
@@ -156,8 +98,6 @@ public class Floristeria {
 		System.out.println("Hay: " + cantidadDecoraciones + " decoraciones.");
 		System.out.println("Floristería " + cantidadDecoracionesStock.getNombre());
 	}
-	
-
 
 	@Override
 	public String toString() {
@@ -165,5 +105,4 @@ public class Floristeria {
 	}
 	
 	
-
 }

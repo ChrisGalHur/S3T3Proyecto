@@ -1,7 +1,8 @@
 package Proyecto;
 
 public class Arbol extends Producto{
-
+	
+	//prueba
 	//Atributos
 	private double altura;
 	

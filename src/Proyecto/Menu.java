@@ -7,6 +7,7 @@ public class Menu {
 	static int menuFloristeria() {
 		Scanner entrada = new Scanner(System.in);
 		int opcion;
+
 		
 		System.out.println(" \n"
 				+ "PANEL DE CONTROL DE FLORISTERIAS: \n" 
@@ -19,9 +20,9 @@ public class Menu {
 		opcion = Integer.parseInt(entrada.next());
 		
 		return opcion;
-		
 	}
 	
+		
 	static int menuOpcionesFloristeria() {
 		Scanner entrada = new Scanner(System.in); 
 		
@@ -100,4 +101,6 @@ public class Menu {
 		
 		return opcion;
 	}
+
 }
+

@@ -57,13 +57,76 @@ public class Floristeria {
 		this.flores = flores;
 	}
 	
+	//Método añadir arbol
+	public Arbol anadirArbol() {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Nombre del árbol: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Precio del árbol: ");
+		double precio = entrada.nextDouble();
+		System.out.println("Altura del árbol: ");
+		double altura = entrada.nextDouble();
+		
+		Arbol arbol = new Arbol(nombre,precio,altura);
+		arboles.add(arbol);
+		System.out.println("Árbol añadido");
+		
+		return arbol;
+	}
+	
+	//Método añadir Flor
+	public Flor anadirFlor() {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Nombre de la flor: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Color de la flor: ");
+		String color = entrada.nextLine();
+		System.out.println("Precio de la flor: ");
+		double precio = entrada.nextDouble();
+		
+		Flor flor = new Flor(nombre,precio, color);
+		flores.add(flor);
+		System.out.println("Flor añadida");
+		return flor;
+	}
+	
+	//Método añadir Decoracion
+	public Decoracion anadirDecoracion() {
+		Scanner entrada = new Scanner(System.in);
+		
+		boolean elegido = false;
+		System.out.println("Nombre de la decoración: ");
+		String nombre = entrada.nextLine();
+		System.out.println("Precio de la decoración: ");
+		double precio = entrada.nextDouble();
+		String materiales ="";
+		do {
+			System.out.println("Elija material (Madera o Plástico) ");
+			materiales = entrada.next();
+			if(materiales.equalsIgnoreCase("madera") || materiales.equalsIgnoreCase("plástico")) {
+				elegido = true;
+				System.out.println("Estoy en el if");
+			}
+			else {
+				System.out.println("opcion no correcta");
+			}
+		}while(!elegido);
+		
+		Decoracion decoracion = new Decoracion(nombre,precio,materiales);
+		decoraciones.add(decoracion);
+		System.out.println("Decoración añadida");
+		return decoracion;
+	}
+	
 	// método ver árboles
-	public void mostrarArboles(Floristeria mostrarArboles) {
+	public void mostrarArboles() {
 
 		if (arboles.size() > 0)
 			for (Arbol arbolesVer : arboles) {
 				System.out.println(arbolesVer.toString());
-				System.out.println(mostrarArboles.getNombre());
+				System.out.println(arbolesVer.getNombre());
 			}
 		else {
 			System.out.println("ERROR: No hay árboles en el inventario.");
@@ -71,12 +134,12 @@ public class Floristeria {
 	}
 
 	// método ver flores
-	public void mostrarFlores(Floristeria mostrarFlores) {
+	public void mostrarFlores() {
 
 		if (flores.size() > 0)
 			for (Flor floresVer : flores) {
 				System.out.println(floresVer.toString());
-				System.out.println(mostrarFlores.getNombre());
+				System.out.println(floresVer.getNombre());
 			}
 		else {
 			System.out.println("ERROR: No hay flores en el inventario.");
@@ -84,12 +147,12 @@ public class Floristeria {
 	}
 
 	// método ver decoraciones
-	public void mostrarDecoraciones(Floristeria mostrarDecoraciones) {
+	public void mostrarDecoraciones() {
 
 		if (decoraciones.size() > 0)
 			for (Decoracion decoracionesVer : decoraciones) {
 				System.out.println(decoracionesVer.toString());
-				System.out.println(mostrarDecoraciones.getNombre());
+				System.out.println(decoracionesVer.getNombre());
 			}
 		else {
 			System.out.println("ERROR: No hay decoraciones en el inventario.");
@@ -97,71 +160,67 @@ public class Floristeria {
 	}
 
 	//método cantidades árboles
-	public void cantidadStockArboles(Floristeria cantidadArbolesStock) {
+	public void cantidadStockArboles() {
 		
 		int cantidadArboles = arboles.size();
 		
 		System.out.println("Hay:" + cantidadArboles + " árboles.");
-		System.out.println("Floristería " + cantidadArbolesStock.getNombre());
-		
 	}
 	
 	//método cantidades flores
-	public void cantidadStockFlores(Floristeria cantidadFloresStock) {
+	public void cantidadStockFlores() {
 		
 		int cantidadFlores = flores.size();
 		
 		System.out.println("Hay: " + cantidadFlores + " flores.");
-		System.out.println("Floristería " + cantidadFloresStock.getNombre());
 	}
 	
 	//método cantidades decoraciones
-	public void cantidadStockDecoraciones(Floristeria cantidadDecoracionesStock) {
+	public void cantidadStockDecoraciones() {
 		
 		int cantidadDecoraciones = decoraciones.size();
 		
 		System.out.println("Hay: " + cantidadDecoraciones + " decoraciones.");
-		System.out.println("Floristería " + cantidadDecoracionesStock.getNombre());
 	}
 
 	//Métodoseliminar
-	public static void eliminarArbol(Floristeria floristeriaEliminarArbol) {
-		int idEliminar;
-		boolean eliminarHecho = false, encontrado = true;
-		
-//		mostrarArboles();//Llamar al método public static?
-		System.out.println("Qué ID de Arbol quieres que eliminemos?");
-		idEliminar = entrada.nextInt();
-			try {
-				for (Producto arbolEliminar : floristeriaEliminarArbol.arboles) {
-					if(arbolEliminar.getIdProducto() == idEliminar) {
-						System.out.println("El arbol se ha eliminado correctamente.");
-					}
-				}
-			} catch (Exception e) {
-				System.out.println("Ese ID no está en la lista.");
-			}
-	}
+//	public void eliminarArbol() {
+//		int idEliminar;
+//		boolean eliminarHecho = false, encontrado = true;
+//		
+////		mostrarArboles();//Llamar al método public static?
+//		System.out.println("Qué ID de Arbol quieres que eliminemos?");
+//		idEliminar = entrada.nextInt();
+//			try {
+//				for (Producto arbolEliminar : floristeriaEliminarArbol.arboles) {
+//					if(arbolEliminar.getIdProducto() == idEliminar) {
+//						System.out.println("El arbol se ha eliminado correctamente.");
+//					}
+//				}
+//			} catch (Exception e) {
+//				System.out.println("Ese ID no está en la lista.");
+//			}
+//	}
+//	
+//	public void eliminarFlor() {
+//		int idEliminar;
+//		boolean eliminarHecho = false, encontrado = true;
+//		
+////		mostrarFlores();//Llamar al método public static?
+//		System.out.println("Qué ID de Flor quieres que eliminemos?");
+//		idEliminar = entrada.nextInt();
+//			try {
+//				for (Producto florEliminar : floristeriaEliminarFlor.arboles) {
+//					if(florEliminar.getIdProducto() == idEliminar) {
+//						System.out.println("La flor se ha eliminado correctamente.");
+//					}
+//				}
+//			} catch (Exception e) {
+//				System.out.println("Ese ID de Flor no es valido.");
+//			}
+//	}
 	
-	public static void eliminarFlor(Floristeria floristeriaEliminarFlor) {
-		int idEliminar;
-		boolean eliminarHecho = false, encontrado = true;
-		
-//		mostrarFlores();//Llamar al método public static?
-		System.out.println("Qué ID de Flor quieres que eliminemos?");
-		idEliminar = entrada.nextInt();
-			try {
-				for (Producto florEliminar : floristeriaEliminarFlor.arboles) {
-					if(florEliminar.getIdProducto() == idEliminar) {
-						System.out.println("La flor se ha eliminado correctamente.");
-					}
-				}
-			} catch (Exception e) {
-				System.out.println("Ese ID de Flor no es valido.");
-			}
-	}
-	
-	public static void eliminarDecoracion(Floristeria floristeriaEliminarDecoracion) {
+	public void eliminarDecoracion(Floristeria floristeriaEliminarDecoracion) {
 		int idEliminar;
 		boolean eliminarHecho = false, encontrado = true;
 		
@@ -181,7 +240,7 @@ public class Floristeria {
 	}
 
 	//Metodos de valores
-	public static void calcularValorTotal(Floristeria floristeriaValorTotal) {
+	public void calcularValorTotal(Floristeria floristeriaValorTotal) {
 		double valorTotal = 0,valorTotalArboles = 0, valorTotalFlores = 0, valorTotalDecoraciones = 0;
 		
 		//Valor en arboles 
@@ -205,6 +264,6 @@ public class Floristeria {
 
 	@Override
 	public String toString() {
-		return "Floristeria: " + nombre ;
+		return "Floristeria: " + this.nombre ;
 	}
 }

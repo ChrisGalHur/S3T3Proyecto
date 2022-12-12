@@ -13,6 +13,12 @@ public class Main {
 		Floristeria floristeria;
 		int opcion = 0, opcionFloristeria = 0, opcionProductos = 0, opcionStocksCantidades = 0, opcionStocks = 0;
 
+		//Para pruebas
+		Floristeria floristeriaPrueba = new Floristeria("Pruebas");
+		Flor florPrueba = new Flor("amapola", 2.5, "Amarilla");
+		Arbol arbolPrueba = new Arbol("Fresno", 25.99, 10.5);
+		Decoracion decoracionPrueba = new Decoracion("Gnomo jardín", 21.55, "MADERA");
+		//---------------------------------------------------------------
 		
 		do {
 			try {

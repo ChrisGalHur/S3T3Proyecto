@@ -129,7 +129,7 @@ public class Floristeria {
 		int idEliminar;
 		boolean eliminarHecho = false, encontrado = true;
 		
-		mostrarArboles();//Llamar al método public static?
+//		mostrarArboles();//Llamar al método public static?
 		System.out.println("Qué ID de Arbol quieres que eliminemos?");
 		idEliminar = entrada.nextInt();
 			try {
@@ -147,7 +147,7 @@ public class Floristeria {
 		int idEliminar;
 		boolean eliminarHecho = false, encontrado = true;
 		
-		mostrarFlores();//Llamar al método public static?
+//		mostrarFlores();//Llamar al método public static?
 		System.out.println("Qué ID de Flor quieres que eliminemos?");
 		idEliminar = entrada.nextInt();
 			try {
@@ -165,12 +165,13 @@ public class Floristeria {
 		int idEliminar;
 		boolean eliminarHecho = false, encontrado = true;
 		
-		mostrarDecoraciones();//Llamar al método public static?
+//		mostrarDecoraciones();//Llamar al método public static?
 		System.out.println("Qué ID de Decoracion quieres que eliminemos?");
 		idEliminar = entrada.nextInt();
 			try {
 				for (Producto decoracionEliminar : floristeriaEliminarDecoracion.arboles) {
 					if(decoracionEliminar.getIdProducto() == idEliminar) {
+						
 						System.out.println("La decoracion se ha eliminado correctamente");
 					}
 				}

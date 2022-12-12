@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class FloristeriaContenedor {
 	
-	static Scanner entrada = new Scanner(System.in);
+	private Scanner entrada = new Scanner(System.in);
 	
 	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
 	
 	//metodo crear floristería
-	private void crearFloristeria() {
+	public void crearFloristeria() {
 		
 		String nombre;
 		
@@ -39,111 +39,134 @@ public class FloristeriaContenedor {
 	}
 	
 	//método mostrar floristería
-	private void mostrarFloristeria() {
-		
+	public void mostrarFloristeria() {
+			
 		String nombre;
-		
+			
 		System.out.println("Introducir la floristería a buscar: ");
 		nombre = entrada.next();
-		
+			
 		if (floristerias.size() > 0)
-			for (Floristeria floristeriaVer : floristerias) {
-				System.out.println(floristeriaVer.toString() + " mostrada correctamente.");
-			}
-		else {
+			for ( int i = 0; i < floristerias.size(); i++) {
+					
+				if (floristerias.get(i).getNombre().equalsIgnoreCase(nombre)) {
+				System.out.println(floristerias.get(i).toString() + " mostrada correctamente.");
+			} else {
 			System.out.println("ERROR: No existe la florisería indicada.");
+			}
+			
+			if (floristerias.size() == 0)
+				System.out.println("ERROR. No existen floristerías en el sistema.");
+			
+			System.out.println("Introducir la floristería a buscar: ");
+			nombre = entrada.next();
+			
+			if (floristerias.size() > 0) {
+				for ( int i = 0; i < floristerias.size(); i++) {
+					
+					if (floristerias.get(i).getNombre().equalsIgnoreCase(nombre)) {
+					System.out.println(floristerias.get(i).toString() + " mostrada correctamente.");
+					} else {
+						System.out.println("ERROR: No existe la florisería indicada.");
+					}
+				}
+			}
 		}
-	}
 	
 	//método eliminar floristería
-	private void eliminarFloristeria() {
+	public void eliminarFloristeria() {
+
+        String nombre = "";
+        Floristeria floristeriaEncontrada = null;
+
+        mostrarFloristerias();
+
+        if (floristerias.size() > 0) {
+        System.out.println(" \n ");
+        System.out.println("Introducir nombre de la floristería a eliminar: ");
+        nombre = entrada.next();
+        }
+
+        if (floristerias.size() > 0) {
+        for ( int i = 0; i < floristerias.size(); i++) {
+
+            if (floristerias.get(i).getNombre().equalsIgnoreCase(nombre)) {
+
+                floristeriaEncontrada = floristerias.get(i);
+                floristerias.remove(i);
+                System.out.println("La floristería se ha eliminado correctamente");
+                } 
+            }
+
+        if (floristeriaEncontrada == null) {
+            System.out.println("No se encuentra la floristeria");
+            }
+        }
+    }
+	
+	public Floristeria devuelveFloristeria() {
+		Scanner entrada = new Scanner(System.in);
 		
-		String nombre;
+		boolean existe = false;
 		
+		if(floristerias.size() > 0) {
+			mostrarFloristerias();
+			System.out.println("Con qué floristería quiere trabajar?");
+			String nombre = entrada.nextLine();
+			
+			for (Floristeria f : floristerias) {
+				if(f.getNombre().equalsIgnoreCase(nombre)) {
+					System.out.println("Ha escogido la floristería " + f.getNombre() + " correctamente.");
+					existe = true;
+					return f;
+				}
+			} 
+		}else {
+			System.out.println("No existen floristerias");
+		}
+		if (!existe) {
+			System.out.println("La floristería indicada no existe");
+		}
+		return null;
+	}
+		
+		String nombre = "";
+		Floristeria floristeriaEncontrada = null;
+		 
+		mostrarFloristerias();
+		
+		if (floristerias.size() > 0) {
+		System.out.println(" \n ");
 		System.out.println("Introducir nombre de la floristería a eliminar: ");
 		nombre = entrada.next();
+		}
 		
-		if (floristerias.size() == 0)
-			System.out.println("ERROR. No existen floristerías en el sistema.");
-		
+		if (floristerias.size() > 0) {
 		for ( int i = 0; i < floristerias.size(); i++) {
-		
+			
 			if (floristerias.get(i).getNombre().equalsIgnoreCase(nombre)) {
+				
+				floristeriaEncontrada = floristerias.get(i);
 				floristerias.remove(i);
 				System.out.println("La floristería se ha eliminado correctamente");
-			} else {
-				System.out.println("ERROR: No existe la florisería indicada.");
-			} 
+				} 
+			}
+				
+		if (floristeriaEncontrada == null) {
+			System.out.println("No se ha encontrado la floristería.");
+			}
 		}
 	}
 	
-	//método menú floristería
-	public void menuFloristería() {
-		
-			int opcion = 0;
-			
-			do {
-
-				try {
-
-					System.out.println(" \n"
-							+ "PANEL DE CONTROL DE FLORISTERIAS: \n" 
-							+ "1. Crear floristerías. \n" 
-							+ "2. Mostrar floristerías. \n"
-							+ "3. Eliminar floristerías. \n" 
-							+ "0. Volver al menú principal.");
-
-					opcion = Integer.parseInt(entrada.next());
-					
-					switch (opcion) {
-
-					case 1:
-						System.out.println("CREAR FLORISTERÍA");
-						crearFloristeria();
-						break;
-
-					case 2:
-						System.out.println("MOSTRAR FLORISTERÍA");
-						mostrarFloristeria();
-						break;
-
-					case 3:
-						System.out.println("ELIMINAR FLORISTERÍA");
-						eliminarFloristeria();
-						break;
-
-					case 0:
-						
-						break;
-
-					default:
-						System.out.println("ERROR opción no aceptada.");
-						break;
-
-					}
-
-				} catch (Exception ex) {
-					System.out.println("ERROR comando introducido no valido.");
-				}
-
-			} while (opcion != 0);
-
+	//Mostrar floristerias
+	public void mostrarFloristerias() {
+		if (floristerias.size() > 0)
+			for (Floristeria floristeriaVer : floristerias) {
+				System.out.println(floristeriaVer.toString());
+			}
+		else {
+			System.out.println("No existen floristerías.");
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}
 	
 }

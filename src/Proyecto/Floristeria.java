@@ -6,31 +6,34 @@ import java.util.Scanner;
 
 public class Floristeria {
 
+
 	static Scanner entrada = new Scanner(System.in);
+
  
-	//Atributos
-	private String nombre;
 	private List<Arbol> arboles = new ArrayList();
 	private List<Decoracion> decoraciones = new ArrayList();
 	private List<Flor> flores = new ArrayList();
 
-	//Constructores
-	public Floristeria() {
-		
-	}
 	
+
+	//atributos
+	private String nombre;
+ 
+	//constructor para objetos
 	public Floristeria(String nombre) {
 		this.nombre = nombre;
 	}
 	
-	//Getters
+	//constructor vacío para la llamada desde el Main
+	public Floristeria() {
+		
+	}
+
+	//getters
 	public String getNombre() {
 		return nombre;
 	}
-	
-	public List<Arbol> getArboles() {
-		return arboles;
-	}
+
 
 	public List<Decoracion> getDecoraciones() {
 		return decoraciones;
@@ -120,6 +123,7 @@ public class Floristeria {
 		return decoracion;
 	}
 	
+
 	// método ver árboles
 	public void mostrarArboles() {
 
@@ -179,6 +183,7 @@ public class Floristeria {
 		
 		System.out.println("Hay: " + cantidadDecoraciones + " decoraciones.");
 	}
+
 
 	//Métodoseliminar
 //	public void eliminarArbol() {
@@ -262,5 +267,8 @@ public class Floristeria {
 	@Override
 	public String toString() {
 		return "Floristeria: " + this.nombre ;
+
 	}
+	
+	
 }

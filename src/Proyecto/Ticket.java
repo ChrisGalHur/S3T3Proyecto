@@ -50,8 +50,4 @@ public class Ticket {
 	public void verArchivoTicket() {
 		Archivo.leerTicket("ticket.txt");
 	}
-	
-	public void eliminarTicket() {
-		ticket.clear();
-	}
 }

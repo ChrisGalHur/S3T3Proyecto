@@ -7,7 +7,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 Scanner entrada = new Scanner(System.in);
-		
+					
 		//llamada a los objetos
 		Floristeria llamadaObjetosFloristeria = new Floristeria();
 		FloristeriaContenedor llamadaObjetosFloristeriaContenedor = new FloristeriaContenedor();

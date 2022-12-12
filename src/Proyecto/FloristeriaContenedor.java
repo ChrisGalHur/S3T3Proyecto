@@ -8,7 +8,7 @@ public class FloristeriaContenedor {
 	private Scanner entrada = new Scanner(System.in);
 	
 	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
-	
+				
 	//metodo crear floristería
 	private void crearFloristeria() {
 		 

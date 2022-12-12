@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Floristeria {
 
+
 	private Scanner entrada = new Scanner(System.in);
  
 	private List<Arbol> arboles = new ArrayList();

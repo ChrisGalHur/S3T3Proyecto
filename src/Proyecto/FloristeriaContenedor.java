@@ -11,9 +11,11 @@ public class FloristeriaContenedor {
 				
 	//metodo crear floristería
 
-	
-	public void crearFloristeria() {
-		  
+
+	private void crearFloristeria() {
+		 
+
+
 
 		String nombre;
 		

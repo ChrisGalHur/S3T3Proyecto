@@ -33,7 +33,7 @@ public class Menu {
 				+ "2.  Mostrar stock. \n"
 				+ "3.  Mostrar cantidades en stock. \n"
 				+ "4.  Mostrar valor total de la floristería. \n"
-				+ "5.  Crear tickets. \n"
+				+ "5.  Realizar compra. \n"
 				+ "6.  Mostrar ventas anteriores. \n"
 				+ "7.  Ganancias en ventas. \n"
 				+ "8.  Ver tickets anteriores. \n"

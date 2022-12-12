@@ -126,7 +126,6 @@ public class Floristeria {
 		if (arboles.size() > 0)
 			for (Arbol arbolesVer : arboles) {
 				System.out.println(arbolesVer.toString());
-				System.out.println(arbolesVer.getNombre());
 			}
 		else {
 			System.out.println("ERROR: No hay árboles en el inventario.");
@@ -139,7 +138,6 @@ public class Floristeria {
 		if (flores.size() > 0)
 			for (Flor floresVer : flores) {
 				System.out.println(floresVer.toString());
-				System.out.println(floresVer.getNombre());
 			}
 		else {
 			System.out.println("ERROR: No hay flores en el inventario.");
@@ -152,7 +150,6 @@ public class Floristeria {
 		if (decoraciones.size() > 0)
 			for (Decoracion decoracionesVer : decoraciones) {
 				System.out.println(decoracionesVer.toString());
-				System.out.println(decoracionesVer.getNombre());
 			}
 		else {
 			System.out.println("ERROR: No hay decoraciones en el inventario.");

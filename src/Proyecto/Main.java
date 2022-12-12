@@ -126,29 +126,29 @@ public class Main {
 									case 1:
 										
 										System.out.println("INVENTARIO DE ÁRBOLES");
-										floristeria.mostrarArboles(floristeria);
+										floristeria.mostrarArboles();
 										break;
 
 									case 2:
 										
 										System.out.println("INVENTARIO DE FLORES");
-										floristeria.mostrarFlores(floristeria);
+										floristeria.mostrarFlores();
 										break;
 
 									case 3:
 										
 										System.out.println("INVENTARIO DE DECORACIONES");
-										floristeria.mostrarDecoraciones(floristeria);
+										floristeria.mostrarDecoraciones();
 										break;
 
 									case 4:
 										
 										System.out.println("INVENTARIO DE ÁRBOLES");
-										floristeria.mostrarArboles(floristeria);
+										floristeria.mostrarArboles();
 										System.out.println("INVENTARIO DE FLORES");
-										floristeria.mostrarFlores(floristeria);
+										floristeria.mostrarFlores();
 										System.out.println("INVENTARIO DE DECORACIONES");
-										floristeria.mostrarDecoraciones(floristeria);
+										floristeria.mostrarDecoraciones();
 										break;
 
 									case 0:
@@ -176,29 +176,29 @@ public class Main {
 									case 1:
 										
 										System.out.println("STOCK DE ÁRBOLES");
-										floristeria.cantidadStockArboles(floristeria);
+										floristeria.cantidadStockArboles();
 										break;
 
 									case 2:
 										
 										System.out.println("STOCK DE FLORES");
-										floristeria.cantidadStockFlores(floristeria);
+										floristeria.cantidadStockFlores();
 										break;
 
 									case 3:
 										
 										System.out.println("STOCK DE DECORACIONES");
-										floristeria.cantidadStockDecoraciones(floristeria);
+										floristeria.cantidadStockDecoraciones();
 										break;
 
 									case 4:
 										
 										System.out.println("STOCK DE ÁRBOLES");
-										floristeria.cantidadStockArboles(floristeria);
+										floristeria.cantidadStockArboles();
 										System.out.println("STOCK DE FLORES");
-										floristeria.cantidadStockFlores(floristeria);
+										floristeria.cantidadStockFlores();
 										System.out.println("STOCK DE DECORACIONES");
-										floristeria.cantidadStockDecoraciones(floristeria);
+										floristeria.cantidadStockDecoraciones();
 										break;
 
 									case 0:

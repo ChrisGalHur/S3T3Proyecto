@@ -28,7 +28,7 @@ public class Decoracion extends Producto{
 
 	@Override
 	public String toString() {
-		return "(id:" + this.getIdProducto() + ") Decoración | Nombre: " + this.getNombre() + " | Precio: " + this.getPrecio() + "€ | Material: " + this.material;
+		return "(id:" + super.getIdProducto() + ") Decoración | Nombre: " + super.getNombre() + " | Precio: " + super.getPrecio() + "€ | Material: " + this.material;
 	}
 	
 }

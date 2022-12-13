@@ -9,8 +9,8 @@ public class FloristeriaContenedor {
 	
 	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
 	
+	
 	//metodo crear floristería
-
 	public void crearFloristeria() {
 		String nombre;
 		
@@ -74,9 +74,9 @@ public class FloristeriaContenedor {
         mostrarFloristerias();
 
         if (floristerias.size() > 0) {
-        System.out.println(" \n ");
-        System.out.println("Introducir nombre de la floristería a eliminar: ");
-        nombre = entrada.next();
+	        System.out.println(" \n ");
+	        System.out.println("Introducir nombre de la floristería a eliminar: ");
+	        nombre = entrada.next();
         }
 
         if (floristerias.size() > 0) {

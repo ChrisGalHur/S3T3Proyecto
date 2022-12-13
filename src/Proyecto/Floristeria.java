@@ -160,8 +160,8 @@ public class Floristeria {
 	public void cantidadStockArboles() {
 		
 		int cantidadArboles = arboles.size();
-		
 		System.out.println("Hay:" + cantidadArboles + " árboles.");		
+
 	}
 	
 	//método cantidades flores
@@ -185,7 +185,7 @@ public class Floristeria {
 //		int idEliminar;
 //		boolean eliminarHecho = false, encontrado = true;
 //		
-//		mostrarArboles();//Llamar al método public static?
+////		mostrarArboles();//Llamar al método public static?
 //		System.out.println("Qué ID de Arbol quieres que eliminemos?");
 //		idEliminar = entrada.nextInt();
 //			try {
@@ -234,9 +234,47 @@ public class Floristeria {
 //				System.out.println("Ese ID de decoracion no es valido.");
 //			}
 //	}
+	
+//	
+//	public void eliminarFlor() {
+//		int idEliminar;
+//		boolean eliminarHecho = false, encontrado = true;
+//		
+////		mostrarFlores();//Llamar al método public static?
+//		System.out.println("Qué ID de Flor quieres que eliminemos?");
+//		idEliminar = entrada.nextInt();
+//			try {
+//				for (Producto florEliminar : floristeriaEliminarFlor.arboles) {
+//					if(florEliminar.getIdProducto() == idEliminar) {
+//						System.out.println("La flor se ha eliminado correctamente.");
+//					}
+//				}
+//			} catch (Exception e) {
+//				System.out.println("Ese ID de Flor no es valido.");
+//			}
+//	}
+	
+	public void eliminarDecoracion(Floristeria floristeriaEliminarDecoracion) {
+		int idEliminar;
+		boolean eliminarHecho = false, encontrado = true;
+		
+//		mostrarDecoraciones();//Llamar al método public static?
+		System.out.println("Qué ID de Decoracion quieres que eliminemos?");
+		idEliminar = entrada.nextInt();
+			try {
+				for (Producto decoracionEliminar : floristeriaEliminarDecoracion.arboles) {
+					if(decoracionEliminar.getIdProducto() == idEliminar) {
+						
+						System.out.println("La decoracion se ha eliminado correctamente");
+					}
+				}
+			} catch (Exception e) {
+				System.out.println("Ese ID de decoracion no es valido.");
+			}
+	}
 
 	//Metodos de valores
-	public static void calcularValorTotal(Floristeria floristeriaValorTotal) {
+	public void calcularValorTotal(Floristeria floristeriaValorTotal) {
 		double valorTotal = 0,valorTotalArboles = 0, valorTotalFlores = 0, valorTotalDecoraciones = 0;
 		
 		//Valor en arboles 
@@ -260,6 +298,6 @@ public class Floristeria {
 
 	@Override
 	public String toString() {
-		return "Floristeria: " + nombre ;
+		return "Floristeria: " + this.nombre ;
 	}
 }

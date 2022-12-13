@@ -28,7 +28,10 @@ public class Ticket {
 	}
 	
 	public void verTicket() {
+		System.out.println("Los tickets");
 		ticket.forEach(e -> System.out.println(e));
+		System.out.println(ticket.size());
+		
 	}
 	
 	public void imprimirTicket() throws IOException {
@@ -54,4 +57,7 @@ public class Ticket {
 	public void eliminarTicket() {
 		ticket.clear();
 	}
+	
+	
+
 }

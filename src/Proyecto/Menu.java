@@ -30,14 +30,13 @@ public class Menu {
 		
 		System.out.println(" \n"
 				+ "OPCIONES DE FLORISTERIA \n"
-				+ "1.  Menú de productos. \n"
+				+ "1.  Realizar compra. \n"
 				+ "2.  Mostrar stock. \n"
 				+ "3.  Mostrar cantidades en stock. \n"
 				+ "4.  Mostrar valor total de la floristería. \n"
-				+ "5.  Crear tickets. \n"
-				+ "6.  Mostrar ventas anteriores. \n"
-				+ "7.  Ganancias en ventas. \n"
-				+ "8.  Ver tickets anteriores. \n"
+				+ "5.  Mostrar ventas anteriores. \n"
+				+ "6.  Ganancias en ventas. \n"
+				+ "7.  Ver tickets anteriores. \n"
 				+ "0.  Volver al Menú. \n");
 		
 		opcion = Integer.parseInt(entrada.next());

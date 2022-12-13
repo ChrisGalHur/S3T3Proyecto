@@ -6,38 +6,40 @@ import java.util.Scanner;
 
 public class Floristeria {
 
-	private Scanner entrada = new Scanner(System.in);
+
+	static Scanner entrada = new Scanner(System.in);
+
  
-	//Atributos
-	private String nombre;
 	private List<Arbol> arboles = new ArrayList();
 	private List<Decoracion> decoraciones = new ArrayList();
 	private List<Flor> flores = new ArrayList();
 
-	//Constructores
-	public Floristeria() {
-		
-	}
 	
+
+	//atributos
+	private String nombre;
+ 
+	//constructor para objetos
 	public Floristeria(String nombre) {
 		this.nombre = nombre;
 	}
 	
-	//Getters
+	//constructor vacío para la llamada desde el Main
+	public Floristeria() {
+		
+	}
+
+	//getters
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public List<Arbol> getArboles() {
 		return arboles;
 	}
 
 	public List<Decoracion> getDecoraciones() {
 		return decoraciones;
-	}
-
-	public List<Flor> getFlores() {
-		return flores;
 	}
 
 	//Setters
@@ -160,8 +162,8 @@ public class Floristeria {
 	public void cantidadStockArboles() {
 		
 		int cantidadArboles = arboles.size();
-		System.out.println("Hay:" + cantidadArboles + " árboles.");		
-
+		
+		System.out.println("Hay:" + cantidadArboles + " árboles.");
 	}
 	
 	//método cantidades flores
@@ -179,6 +181,7 @@ public class Floristeria {
 		
 		System.out.println("Hay: " + cantidadDecoraciones + " decoraciones.");
 	}
+
 
 	//Métodoseliminar
 //	public void eliminarArbol() {
@@ -198,43 +201,7 @@ public class Floristeria {
 //				System.out.println("Ese ID no está en la lista.");
 //			}
 //	}
-	
-//	public void eliminarFlor() {
-//		int idEliminar;
-//		boolean eliminarHecho = false, encontrado = true;
-//		
-//		mostrarFlores();//Llamar al método public static?
-//		System.out.println("Qué ID de Flor quieres que eliminemos?");
-//		idEliminar = entrada.nextInt();
-//			try {
-//				for (Producto florEliminar : floristeriaEliminarFlor.arboles) {
-//					if(florEliminar.getIdProducto() == idEliminar) {
-//						System.out.println("La flor se ha eliminado correctamente.");
-//					}
-//				}
-//			} catch (Exception e) {
-//				System.out.println("Ese ID de Flor no es valido.");
-//			}
-//	}
-	
-//	public static void eliminarDecoracion(Floristeria floristeriaEliminarDecoracion) {
-//		int idEliminar;
-//		boolean eliminarHecho = false, encontrado = true;
-//		
-//		mostrarDecoraciones();//Llamar al método public static?
-//		System.out.println("Qué ID de Decoracion quieres que eliminemos?");
-//		idEliminar = entrada.nextInt();
-//			try {
-//				for (Producto decoracionEliminar : floristeriaEliminarDecoracion.arboles) {
-//					if(decoracionEliminar.getIdProducto() == idEliminar) {
-//						System.out.println("La decoracion se ha eliminado correctamente");
-//					}
-//				}
-//			} catch (Exception e) {
-//				System.out.println("Ese ID de decoracion no es valido.");
-//			}
-//	}
-	
+
 //	
 //	public void eliminarFlor() {
 //		int idEliminar;
@@ -300,4 +267,6 @@ public class Floristeria {
 	public String toString() {
 		return "Floristeria: " + this.nombre ;
 	}
+	
+	
 }

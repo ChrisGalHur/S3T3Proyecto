@@ -1,13 +1,13 @@
 package Proyecto;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
+	
 	public static void main(String[] args) {
 
-		
-		
 		FloristeriaContenedor llamadaObjetosFloristeriaContenedor = new FloristeriaContenedor();
 
 		Floristeria floristeria;
@@ -50,7 +50,6 @@ public class Main {
 									opcionProductos = Menu.menuProductos();
 									
 									switch(opcionProductos) {
-
 									case 1:
 										Arbol arbol = floristeria.anadirArbol();
 										ticket.arbolesTicket(arbol);
@@ -128,6 +127,8 @@ public class Main {
 				System.out.println("ERROR comando introducido no valido.");
 			}
 		} while (opcion != 0);
+
+		
 	}
 
 }

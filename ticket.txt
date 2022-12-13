@@ -1,0 +1,2 @@
+(id:4) Arbol | Nombre: aa | Precio: 1.0€ | Altura: 1.0cm
+(id:5) Arbol | Nombre: ss | Precio: 2.0€ | Altura: 2.0cm

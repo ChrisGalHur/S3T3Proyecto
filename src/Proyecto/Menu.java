@@ -29,14 +29,12 @@ public class Menu {
 		
 		System.out.println(" \n"
 				+ "OPCIONES DE FLORISTERIA \n"
-				+ "1.  Menú de productos. \n"
+				+ "1.  Realizar pedido. \n"
 				+ "2.  Mostrar stock. \n"
 				+ "3.  Mostrar cantidades en stock. \n"
 				+ "4.  Mostrar valor total de la floristería. \n"
-				+ "5.  Realizar compra. \n"
-				+ "6.  Mostrar ventas anteriores. \n"
-				+ "7.  Ganancias en ventas. \n"
-				+ "8.  Ver tickets anteriores. \n"
+				+ "5.  Ver tickets anteriores. \n"
+				+ "6.  Buscar ticket impreso.  \n"
 				+ "0.  Volver al Menú. \n");
 		
 		opcion = Integer.parseInt(entrada.next());

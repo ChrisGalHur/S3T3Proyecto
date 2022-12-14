@@ -8,7 +8,7 @@ public class FloristeriaContenedor {
 	private Scanner entrada = new Scanner(System.in);
 	
 	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
-	
+				
 	//metodo crear floristería
 	public void crearFloristeria() {
 		String nombre;
@@ -39,6 +39,7 @@ public class FloristeriaContenedor {
 	
 	//método mostrar floristería
 	public void mostrarFloristeria() {
+
         String nombre;
         Floristeria floristeriaMostrada = null;
 
@@ -63,6 +64,7 @@ public class FloristeriaContenedor {
         	}
         }
     }
+
 	
 	//método eliminar floristería
 	public void eliminarFloristeria() {
@@ -106,6 +108,7 @@ public class FloristeriaContenedor {
 		}
 	}
 	
+
 	//Devuelvefloristeria
 	public Floristeria devuelveFloristeria() {
         boolean existe = false;
@@ -132,4 +135,5 @@ public class FloristeriaContenedor {
 
         return null;
     }
+
 }

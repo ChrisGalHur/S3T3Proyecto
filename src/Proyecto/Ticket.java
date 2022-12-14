@@ -56,5 +56,8 @@ public class Ticket{
 	public void verArchivoTicket() {
 		Archivo.leerTicket("ticket.txt");
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> e2f77eccce560bb7b3ee4b9b0f78968bdc3c952a
 }

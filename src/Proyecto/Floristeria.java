@@ -14,7 +14,6 @@ public class Floristeria {
 	private List<Decoracion> decoraciones = new ArrayList();
 	private List<Flor> flores = new ArrayList();
 
-	
 
 	//atributos
 	private String nombre;
@@ -32,6 +31,10 @@ public class Floristeria {
 	//getters
 	public String getNombre() {
 		return nombre;
+	}
+	
+	public List<Arbol> getArboles(){
+		return arboles;
 	}
 
 
@@ -73,7 +76,7 @@ public class Floristeria {
 		
 		Arbol arbol = new Arbol(nombre,precio,altura);
 		arboles.add(arbol);
-		System.out.println("Árbol añadido");
+		
 		
 		return arbol;
 	}
@@ -185,61 +188,72 @@ public class Floristeria {
 	}
 
 
-	//Métodoseliminar
-//	public void eliminarArbol() {
-//		int idEliminar;
-//		boolean eliminarHecho = false, encontrado = true;
-//		
-////		mostrarArboles();//Llamar al método public static?
-//		System.out.println("Qué ID de Arbol quieres que eliminemos?");
-//		idEliminar = entrada.nextInt();
-//			try {
-//				for (Producto arbolEliminar : floristeriaEliminarArbol.arboles) {
-//					if(arbolEliminar.getIdProducto() == idEliminar) {
-//						System.out.println("El arbol se ha eliminado correctamente.");
-//					}
-//				}
-//			} catch (Exception e) {
-//				System.out.println("Ese ID no está en la lista.");
-//			}
-//	}
-//	
-//	public void eliminarFlor() {
-//		int idEliminar;
-//		boolean eliminarHecho = false, encontrado = true;
-//		
-////		mostrarFlores();//Llamar al método public static?
-//		System.out.println("Qué ID de Flor quieres que eliminemos?");
-//		idEliminar = entrada.nextInt();
-//			try {
-//				for (Producto florEliminar : floristeriaEliminarFlor.arboles) {
-//					if(florEliminar.getIdProducto() == idEliminar) {
-//						System.out.println("La flor se ha eliminado correctamente.");
-//					}
-//				}
-//			} catch (Exception e) {
-//				System.out.println("Ese ID de Flor no es valido.");
-//			}
-//	}
+	//Método eliminar Arbol
+    public void eliminarArbol() {
+        int idEliminar;
+        boolean eliminarHecho = false;
+
+        mostrarArboles();
+        System.out.println("Qué ID de Arbol quieres que eliminemos?");
+        idEliminar = entrada.nextInt();
+        //Buscamos la coincidencia de id y si la hay la marcamos en eliminarHecho
+        for(int i = 0; i < arboles.size(); i++) {
+            if (arboles.get(i).getIdProducto() == idEliminar){
+                arboles.remove(i);
+                eliminarHecho = true;
+            }
+        }
+        //Variará el mensaje si se ha hecho el eliminar o no
+        if(eliminarHecho == true){
+            System.out.println("El Arbol se ha eliminado correctamente.");
+        }else{
+            System.out.println("No se ha podido eliminar el Arbol.");
+        }
+    }
 	
-	public void eliminarDecoracion(Floristeria floristeriaEliminarDecoracion) {
-		int idEliminar;
-		boolean eliminarHecho = false, encontrado = true;
-		
-//		mostrarDecoraciones();//Llamar al método public static?
-		System.out.println("Qué ID de Decoracion quieres que eliminemos?");
-		idEliminar = entrada.nextInt();
-			try {
-				for (Producto decoracionEliminar : floristeriaEliminarDecoracion.arboles) {
-					if(decoracionEliminar.getIdProducto() == idEliminar) {
-						
-						System.out.println("La decoracion se ha eliminado correctamente");
-					}
-				}
-			} catch (Exception e) {
-				System.out.println("Ese ID de decoracion no es valido.");
-			}
-	}
+    public void eliminarFlor() {
+        int idEliminar;
+        boolean eliminarHecho = false;
+
+        mostrarFlores();
+        System.out.println("Qué ID de Flores quieres que eliminemos?");
+        idEliminar = entrada.nextInt();
+        //Buscamos la coincidencia de id y si la hay la marcamos en eliminarHecho
+        for(int i = 0; i < flores.size(); i++) {
+            if (flores.get(i).getIdProducto() == idEliminar){
+                flores.remove(i);
+                eliminarHecho = true;
+            }
+        }
+        //Variará el mensaje si se ha hecho el eliminar o no
+        if(eliminarHecho == true){
+            System.out.println("La flor se ha eliminado correctamente.");
+        }else{
+            System.out.println("No se ha podido eliminar la flor.");
+        }
+    }
+	
+    public void eliminarDecoracion() {
+        int idEliminar;
+        boolean eliminarHecho = false;
+
+        mostrarDecoraciones();
+        System.out.println("Qué ID de Decoración quieres que eliminemos?");
+        idEliminar = entrada.nextInt();
+        //Buscamos la coincidencia de id y si la hay la marcamos en eliminarHecho
+        for(int i = 0; i < decoraciones.size(); i++) {
+            if (decoraciones.get(i).getIdProducto() == idEliminar){
+                decoraciones.remove(i);
+                eliminarHecho = true;
+            }
+        }
+        //Variará el mensaje si se ha hecho el eliminar o no
+        if(eliminarHecho == true){
+            System.out.println("La Decoración se ha eliminado correctamente.");
+        }else{
+            System.out.println("No se ha podido eliminar la Decoración.");
+        }
+    }
 
 	//Metodos de valores
 	public void calcularValorTotal(Floristeria floristeriaValorTotal) {
@@ -250,7 +264,7 @@ public class Floristeria {
 			valorTotalArboles = valorTotalArboles + floristeriaValorTotal.arboles.get(i).getPrecio();
 		}
 		//Valor en flores
-		for(int i = 0; i < floristeriaValorTotal.getArboles().size(); i++) {
+		for(int i = 0; i < floristeriaValorTotal.getFlores().size(); i++) {
 			valorTotalFlores = valorTotalFlores + floristeriaValorTotal.flores.get(i).getPrecio();
 		}
 		//Valor en decoraciones

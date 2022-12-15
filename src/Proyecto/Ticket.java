@@ -7,14 +7,17 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Ticket {
+public class Ticket{
 
-	List<Producto> ticket = new ArrayList();
-	private Map<Integer, List<Producto>> tickets = new HashMap<>();
-	
+	private List<Producto> ticket = new ArrayList();
+	private static int numArchivo;
 	private static int idStatic;
 	private int idMap;
 	
+	public List<Producto> getTicket() {
+		return ticket;
+	}
+
 	public void arbolesTicket(Arbol arbol) {
 		ticket.add(arbol);
 	}
@@ -32,8 +35,10 @@ public class Ticket {
 	}
 	
 	public void imprimirTicket() throws IOException {
-		Archivo.guardarTicket(ticket);
-	}
+        numArchivo++;
+        String nombreTicket = "Ticket_" + numArchivo + ".txt";
+        Archivo.guardarTicket(ticket, nombreTicket);
+    }
 	
 	public void almacenarTicket() {
 		idStatic++;

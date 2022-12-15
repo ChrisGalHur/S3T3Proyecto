@@ -2,21 +2,14 @@ package Proyecto;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-/**
- * clase FloristeriaContenedor
- * 
- * contiene los métodos necesarios para crear, mostrar y eliminar una floristería
- * también contiene el método para trabajar en una floristería en concreto
- * 
- * @author Ismael
- *
- */
+
 public class FloristeriaContenedor {
 	
 	private Scanner entrada = new Scanner(System.in);
 	
 	private ArrayList<Floristeria> floristerias = new ArrayList<Floristeria>();
-	
+				
+	//metodo crear floristería
 	public void crearFloristeria() {
 		String nombre;
 		
@@ -104,9 +97,7 @@ public class FloristeriaContenedor {
 		}
 	}
 	
-	/**
-	 * 
-	 */
+	//Mostrar floristerias
 	public void mostrarFloristerias() {
 		if (floristerias.size() > 0)
 			for (Floristeria floristeriaVer : floristerias) {
@@ -118,11 +109,7 @@ public class FloristeriaContenedor {
 	}
 	
 
-	/**
-	 * 
-	 * @return
-	 * Devuelve una floristería en la que poder trabajar
-	 */
+	//Devuelvefloristeria
 	public Floristeria devuelveFloristeria() {
         boolean existe = false;
 

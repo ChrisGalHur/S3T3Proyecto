@@ -11,10 +11,9 @@ import java.util.Map;
 
 
 public class Archivo {
-
+	
 	//Método guardar ticket
     static void guardarTicket(List<Producto> ticket, String nombreTicket) {
-
         FileWriter fichero = null;
         PrintWriter pw = null;
         

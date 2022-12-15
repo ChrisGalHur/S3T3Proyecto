@@ -40,7 +40,7 @@ public class Ticket{
 		String nombreTicket = nombreFloristeria + "_Ticket_"+ numArchivo + ".txt";
 		Archivo.guardarTicket(productos, nombreTicket);
 	}		
-		
+
 	public void verArchivoTicket() {
 		Archivo.leerTicket("ticket.txt");
 	}

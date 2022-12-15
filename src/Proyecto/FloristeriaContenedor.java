@@ -64,37 +64,38 @@ public class FloristeriaContenedor {
         	}
         }
     }
+
 	
 	//método eliminar floristería
 	public void eliminarFloristeria() {
-
-        String nombre = "";
-        Floristeria floristeriaEncontrada = null;
-
-        mostrarFloristerias();
-
-        if (floristerias.size() > 0) {
-	        System.out.println(" \n ");
-	        System.out.println("Introducir nombre de la floristería a eliminar: ");
-	        nombre = entrada.nextLine();
-        }
-
-        if (floristerias.size() > 0) {
-        for ( int i = 0; i < floristerias.size(); i++) {
-
-            if (floristerias.get(i).getNombre().equalsIgnoreCase(nombre)) {
-
-                floristeriaEncontrada = floristerias.get(i);
-                floristerias.remove(i);
-                System.out.println("La floristería se ha eliminado correctamente");
-                } 
-            }
-
-        if (floristeriaEncontrada == null) {
-            System.out.println("No se ha encontrado la floristeria");
-            }
-        }
-    }
+		
+		String nombre = "";
+		Floristeria floristeriaEncontrada = null;
+		 
+		mostrarFloristerias();
+		
+		if (floristerias.size() > 0) {
+		System.out.println(" \n ");
+		System.out.println("Introducir nombre de la floristería a eliminar: ");
+		nombre = entrada.next();
+		}
+		
+		if (floristerias.size() > 0) {
+		for ( int i = 0; i < floristerias.size(); i++) {
+			
+			if (floristerias.get(i).getNombre().equalsIgnoreCase(nombre)) {
+				
+				floristeriaEncontrada = floristerias.get(i);
+				floristerias.remove(i);
+				System.out.println("La floristería se ha eliminado correctamente");
+				} 
+			}
+				
+		if (floristeriaEncontrada == null) {
+			System.out.println("No se ha encontrado la floristería.");
+			}
+		}
+	}
 	
 	//Mostrar floristerias
 	public void mostrarFloristerias() {

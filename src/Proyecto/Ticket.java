@@ -9,45 +9,40 @@ import java.util.Map;
 
 public class Ticket{
 
-	private List<Producto> ticket = new ArrayList();
+	private List<Producto> productos = new ArrayList();
 	private static int numArchivo;
 	private static int idStatic;
 	private int idMap;
 	
 	public List<Producto> getTicket() {
-		return ticket;
+		return productos;
 	}
 
 	public void arbolesTicket(Arbol arbol) {
-		ticket.add(arbol);
+		productos.add(arbol);
 	}
 	
 	public void floresTicket(Flor flor) {
-		ticket.add(flor);
+		productos.add(flor);
 	}
 	
 	public void decoracionTicket(Decoracion decoracion) {
-		ticket.add(decoracion);
+		productos.add(decoracion);
 	}
 	
 	public void verTicket() {
-		ticket.forEach(e -> System.out.println(e));
+		productos.forEach(e -> System.out.println(e));
 	}
 	
-	public void imprimirTicket() throws IOException {
+	public void imprimirTicket(Floristeria floristeria) throws IOException {
 		numArchivo++;
-		String nombreTicket = "Ticket_"+ numArchivo + ".txt";
-		Archivo.guardarTicket(ticket, nombreTicket);
+		String nombreFloristeria = floristeria.getNombre();
+		String nombreTicket = nombreFloristeria + "_Ticket_"+ numArchivo + ".txt";
+		Archivo.guardarTicket(productos, nombreTicket);
 	}		
 		
 	public void verArchivoTicket() {
 		Archivo.leerTicket("ticket.txt");
 	}
-
-	
-	public void eliminarTicket() {
-		ticket.clear();
-	}
-	
 	
 }

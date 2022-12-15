@@ -88,7 +88,7 @@ public class Main {
 												floristeria.almacenarTicket(ticketMain);
 												//Para imprimir el ticket
 												try {
-													ticket.imprimirTicket();
+													ticket.imprimirTicket(floristeria);
 												} catch (IOException e) {
 													e.printStackTrace();
 												}

@@ -40,19 +40,8 @@ public class Ticket{
         Archivo.guardarTicket(ticket, nombreTicket);
     }
 	
-	public void almacenarTicket() {
-		idStatic++;
-		idMap = idStatic;
-		tickets.put(idMap, ticket);
-	}
-	
-	public void mostrarTickets() {
-		for(Map.Entry entry: tickets.entrySet()) {
-			System.out.println(entry.getKey() +" "+ entry.getValue());
-		}
-	}
-	
 	public void verArchivoTicket() {
 		Archivo.leerTicket("ticket.txt");
 	}
+	
 }

@@ -34,20 +34,14 @@ public class Ticket{
 		ticket.forEach(e -> System.out.println(e));
 	}
 	
-	public void imprimirTicket() throws IOException {
-		numArchivo++;
-		String nombreTicket = "Ticket_"+ numArchivo + ".txt";
-		Archivo.guardarTicket(ticket, nombreTicket);
-	}		
-		
+	public void imprimirTicket(Floristeria floristeria) throws IOException {
+        numArchivo++;
+        String nombreTicket = floristeria.getNombre() +  "_Ticket_" + numArchivo + ".txt";
+        Archivo.guardarTicket(ticket, nombreTicket);
+    }
+	
 	public void verArchivoTicket() {
 		Archivo.leerTicket("ticket.txt");
 	}
-
-	
-	public void eliminarTicket() {
-		ticket.clear();
-	}
-	
 	
 }

@@ -32,12 +32,13 @@ public class Floristeria {
 		return nombre;
 	}
 
-	public List<Arbol> getArboles() {
-		return arboles;
-	}
 
 	public List<Decoracion> getDecoraciones() {
 		return decoraciones;
+	}
+
+	public List<Flor> getFlores() {
+		return flores;
 	}
 
 	//Setters
@@ -66,6 +67,7 @@ public class Floristeria {
 		double precio = entrada.nextDouble();
 		System.out.println("Altura del árbol: ");
 		double altura = entrada.nextDouble();
+		entrada.nextLine();//Limpiando Buffer
 		
 		Arbol arbol = new Arbol(nombre,precio,altura);
 		arboles.add(arbol);
@@ -83,6 +85,7 @@ public class Floristeria {
 		String color = entrada.nextLine();
 		System.out.println("Precio de la flor: ");
 		double precio = entrada.nextDouble();
+		entrada.nextLine();//Limpiando Buffer
 		
 		Flor flor = new Flor(nombre,precio, color);
 		flores.add(flor);
@@ -98,25 +101,27 @@ public class Floristeria {
 		String nombre = entrada.nextLine();
 		System.out.println("Precio de la decoración: ");
 		double precio = entrada.nextDouble();
+		entrada.nextLine();//Limpiando Buffer
+		
 		String materiales ="";
 		do {
 			System.out.println("Elija material (Madera o Plástico) ");
 			materiales = entrada.next();
 			if(materiales.equalsIgnoreCase("madera") || materiales.equalsIgnoreCase("plástico")) {
 				elegido = true;
-				System.out.println("Estoy en el if");
 			}
 			else {
-				System.out.println("opcion no correcta");
+				System.out.println("Opcion no correcta.");
 			}
 		}while(!elegido);
 		
-		Decoracion decoracion = new Decoracion(nombre,precio,materiales);
+		Decoracion decoracion = new Decoracion(nombre, precio, materiales);
 		decoraciones.add(decoracion);
 		System.out.println("Decoración añadida");
 		return decoracion;
 	}
 	
+
 	// método ver árboles
 	public void mostrarArboles() {
 		System.out.println("STOCK DE ÁRBOLES");
@@ -129,7 +134,7 @@ public class Floristeria {
 			System.out.println("ERROR: No hay árboles en el inventario.");
 		}
 	}
-	
+
 	// método ver flores
 	public void mostrarFlores() {
 		System.out.println("STOCK DE FLORES");
@@ -142,7 +147,7 @@ public class Floristeria {
 			System.out.println("ERROR: No hay flores en el inventario.");
 		}
 	}
-	
+
 	// método ver decoraciones
 	public void mostrarDecoraciones() {
 		System.out.println("STOCK DE DECORACIONES");
@@ -156,7 +161,7 @@ public class Floristeria {
 			System.out.println("ERROR: No hay decoraciones en el inventario.");
 		}
 	}
-	
+
 	//método cantidades árboles
 	public void cantidadStockArboles() {
 		
@@ -296,8 +301,8 @@ public class Floristeria {
 	@Override
 	public String toString() {
 		return "Floristeria: " + this.nombre ;
+
 	}
-
-
+	
 	
 }

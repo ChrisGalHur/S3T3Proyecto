@@ -67,6 +67,7 @@ public class Floristeria {
 		double precio = entrada.nextDouble();
 		System.out.println("Altura del árbol: ");
 		double altura = entrada.nextDouble();
+		entrada.nextLine();//Limpiando Buffer
 		
 		Arbol arbol = new Arbol(nombre,precio,altura);
 		arboles.add(arbol);
@@ -84,6 +85,7 @@ public class Floristeria {
 		String color = entrada.nextLine();
 		System.out.println("Precio de la flor: ");
 		double precio = entrada.nextDouble();
+		entrada.nextLine();//Limpiando Buffer
 		
 		Flor flor = new Flor(nombre,precio, color);
 		flores.add(flor);
@@ -99,20 +101,21 @@ public class Floristeria {
 		String nombre = entrada.nextLine();
 		System.out.println("Precio de la decoración: ");
 		double precio = entrada.nextDouble();
+		entrada.nextLine();//Limpiando Buffer
+		
 		String materiales ="";
 		do {
 			System.out.println("Elija material (Madera o Plástico) ");
 			materiales = entrada.next();
 			if(materiales.equalsIgnoreCase("madera") || materiales.equalsIgnoreCase("plástico")) {
 				elegido = true;
-				System.out.println("Estoy en el if");
 			}
 			else {
-				System.out.println("opcion no correcta");
+				System.out.println("Opcion no correcta.");
 			}
 		}while(!elegido);
 		
-		Decoracion decoracion = new Decoracion(nombre,precio,materiales);
+		Decoracion decoracion = new Decoracion(nombre, precio, materiales);
 		decoraciones.add(decoracion);
 		System.out.println("Decoración añadida");
 		return decoracion;

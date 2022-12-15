@@ -12,12 +12,12 @@ import java.util.Map;
 
 public class Archivo {
 	
-	
-	static void guardarTicket(List<Producto> ticket) {
+	//Guardar ticket
+	static void guardarTicket(List<Producto> ticket, String nombreTicket) {
         FileWriter fichero = null;
         PrintWriter pw = null;
         try {
-        	fichero = new FileWriter("ticket.txt");
+        	fichero = new FileWriter(nombreTicket);
             pw = new PrintWriter(fichero);
 
             for(Producto p: ticket) {

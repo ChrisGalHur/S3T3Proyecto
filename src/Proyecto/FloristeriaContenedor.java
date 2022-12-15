@@ -76,7 +76,7 @@ public class FloristeriaContenedor {
         if (floristerias.size() > 0) {
 	        System.out.println(" \n ");
 	        System.out.println("Introducir nombre de la floristería a eliminar: ");
-	        nombre = entrada.next();
+	        nombre = entrada.nextLine();
         }
 
         if (floristerias.size() > 0) {

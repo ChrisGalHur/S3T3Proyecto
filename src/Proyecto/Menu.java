@@ -29,7 +29,7 @@ public class Menu {
 		
 		System.out.println(" \n"
 				+ "OPCIONES DE FLORISTERIA \n"
-				+ "1.  Realizar compra. \n"
+				+ "1.  Realizar pedido. \n"
 				+ "2.  Mostrar stock. \n"
 				+ "3.  Mostrar cantidades en stock. \n"
 				+ "4.  Mostrar valor total de la floristería. \n"

@@ -9,11 +9,10 @@ import java.util.Map;
 
 public class Ticket {
 
-	List<Producto> ticket = new ArrayList();
-	private Map<Integer, List<Producto>> tickets = new HashMap<>();
+	public List<Producto> ticket = new ArrayList();
 	
-	private static int idStatic;
-	private int idMap;
+	private static int numArchivo;
+	
 	
 	public void arbolesTicket(Arbol arbol) {
 		ticket.add(arbol);
@@ -28,28 +27,15 @@ public class Ticket {
 	}
 	
 	public void verTicket() {
-		System.out.println("Los tickets");
 		ticket.forEach(e -> System.out.println(e));
-		System.out.println(ticket.size());
-		
 	}
 	
 	public void imprimirTicket() throws IOException {
-		Archivo.guardarTicket(ticket);
+		numArchivo++;
+		String nombreTicket = "Ticket_"+ numArchivo + ".txt";
+		Archivo.guardarTicket(ticket, nombreTicket);
 	}
-	
-	public void almacenarTicket() {
-		idStatic++;
-		idMap = idStatic;
-		tickets.put(idMap, ticket);
-	}
-	
-	public void mostrarTickets() {
-		for(Map.Entry entry: tickets.entrySet()) {
-			System.out.println(entry.getKey() +" "+ entry.getValue());
-		}
-	}
-	
+		
 	public void verArchivoTicket() {
 		Archivo.leerTicket("ticket.txt");
 	}
@@ -58,6 +44,19 @@ public class Ticket {
 	public void eliminarTicket() {
 		ticket.clear();
 	}
+/**
+ * una prueba
+ * @return
+ */
 	
+	public List<Producto> getTicket() {
+		return ticket;
+	}
 
+	@Override
+	public String toString() {
+		return "Ticket [ticket=" + ticket + "]";
+	}
+	
+	
 }

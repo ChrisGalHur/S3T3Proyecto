@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-(id:4) Arbol | Nombre: aa | Precio: 1.0€ | Altura: 1.0cm
-(id:5) Arbol | Nombre: ss | Precio: 2.0€ | Altura: 2.0cm
-=======
-(id:4) Arbol | Nombre: Naranjo | Precio: 25.0€ | Altura: 140.0cm
->>>>>>> e2f77eccce560bb7b3ee4b9b0f78968bdc3c952a

@@ -11,32 +11,34 @@ import java.util.Map;
 
 
 public class Archivo {
-	
-	//Guardar ticket
-	static void guardarTicket(List<Producto> ticket, String nombreTicket) {
+
+	//Método guardar ticket
+    static void guardarTicket(List<Producto> ticket, String nombreTicket) {
+
         FileWriter fichero = null;
         PrintWriter pw = null;
+        
         try {
-        	fichero = new FileWriter(nombreTicket);
+            fichero = new FileWriter(nombreTicket);
             pw = new PrintWriter(fichero);
 
             for(Producto p: ticket) {
-            	pw.println(p);
+                pw.println(p);
             }
-            
+
             System.out.println("Ticket impreso");
 
         } catch (Exception e) {
-        	System.out.println(e.getMessage());
-           
+            System.out.println(e.getMessage());
+
         } finally {
            try {
-        	   if (fichero != null)  fichero.close();
+               if (fichero != null)  fichero.close();
            } catch (Exception e2) {
-        	   System.out.println(e2.getMessage());
+               System.out.println(e2.getMessage());
            }
         }
-	}
+    }
 	
 	//Leer ticket
 	static void leerTicket(String path) {

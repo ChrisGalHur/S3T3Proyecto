@@ -33,9 +33,8 @@ public class Menu {
 				+ "2.  Mostrar stock. \n"
 				+ "3.  Mostrar cantidades en stock. \n"
 				+ "4.  Mostrar valor total de la floristería. \n"
-				+ "5.  Mostrar ventas anteriores. \n"
-				+ "6.  Ganancias en ventas. \n"
-				+ "7.  Ver tickets anteriores. \n"
+				+ "5.  Ver tickets anteriores. \n"
+				+ "6.  Buscar ticket impreso.  \n"
 				+ "0.  Volver al Menú. \n");
 		
 		opcion = Integer.parseInt(entrada.next());

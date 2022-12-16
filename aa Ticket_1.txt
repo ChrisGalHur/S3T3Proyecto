@@ -1,1 +1,0 @@
-(id:4) Arbol | Nombre: ss | Precio: 1.0€ | Altura: 1.0cm

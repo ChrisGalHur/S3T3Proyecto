@@ -18,6 +18,11 @@ public class Floristeria {
 	public Map<Integer, List<Producto>> tickets = new HashMap<>();
 	private static int idStatic;
 	private int idMap;
+	//******NUEVO
+	private List<String> nombreTickets = new ArrayList();
+	//********
+	
+	
 	
 	//Constructores
 	public Floristeria() {
@@ -58,7 +63,11 @@ public class Floristeria {
 		this.flores = flores;
 	}
 	
-	//Método añadir arbol
+	/**
+	 * Crea un nuevo árbol a partir de las entradas del usuario
+	 * 
+	 * @return Arbol
+	 */
 	public Arbol anadirArbol() {
 		
 		System.out.println("Nombre del árbol: ");
@@ -76,7 +85,11 @@ public class Floristeria {
 		return arbol;
 	}
 	
-	//Método añadir Flor
+	/**
+	 * Crea una nueva flor a partir de las entradas del usuario
+	 * 
+	 * @return Flor
+	 */
 	public Flor anadirFlor() {
 		
 		System.out.println("Nombre de la flor: ");
@@ -93,7 +106,11 @@ public class Floristeria {
 		return flor;
 	}
 	
-	//Método añadir Decoracion
+	/**
+	 * Crea una nueva decoración a partir de las entradas del usuario
+	 * 
+	 * @return Decoracion
+	 */
 	public Decoracion anadirDecoracion() {
 		
 		boolean elegido = false;
@@ -187,10 +204,10 @@ public class Floristeria {
 	}
 
 	//Método eliminar Arbol
-	public void eliminarArbol() {
+	public Arbol eliminarArbol() {
 		int idEliminar;
 		boolean eliminarHecho = false;
-		
+		Arbol arbol = null;
 		mostrarArboles();
 		if(arboles.size() > 0) {
 			System.out.println("Qué ID de Arbol quieres que eliminemos?");
@@ -198,6 +215,7 @@ public class Floristeria {
 			//Buscamos la coincidencia de id y si la hay la marcamos en eliminarHecho
 			for(int i = 0; i < arboles.size(); i++) {
 				if (arboles.get(i).getIdProducto() == idEliminar){
+					arbol = arboles.get(i);
 					arboles.remove(i);
 					eliminarHecho = true;
 				}
@@ -209,19 +227,21 @@ public class Floristeria {
 				System.out.println("No se ha podido eliminar el Arbol.");
 			}
 		}
+		return arbol;
 	}
 	
 	//Método eliminar Flor
-	public void eliminarFlor() {
+	public Flor eliminarFlor() {
 		int idEliminar;
 		boolean eliminarHecho = false;
-			
+		Flor flor = null;
 		mostrarArboles();
 		System.out.println("Qué ID de Flor quieres que eliminemos?");
 		idEliminar = entrada.nextInt();
 				
 		for(int i = 0; i < flores.size(); i++) {
 			if (flores.get(i).getIdProducto() == idEliminar){
+				flores.get(i);
 				flores.remove(i);
 				eliminarHecho = true;
 			}
@@ -232,19 +252,21 @@ public class Floristeria {
 		}else{
 			System.out.println("No se ha podido eliminar la Flor.");
 		}
+		return flor;
 	}
 	
 	//Método eliminar Decoración
-	public void eliminarDecoracion() {
+	public Decoracion eliminarDecoracion() {
 		int idEliminar;
 		boolean eliminarHecho = false;
-			
+		Decoracion decoracion = null;	
 		mostrarArboles();
 		System.out.println("Qué ID de Arbol quieres que eliminemos?");
 		idEliminar = entrada.nextInt();
 				
 		for(int i = 0; i < decoraciones.size(); i++) {
 			if (decoraciones.get(i).getIdProducto() == idEliminar){
+				decoraciones.get(i);
 				decoraciones.remove(i);
 				eliminarHecho = true;
 			}
@@ -255,6 +277,7 @@ public class Floristeria {
 		}else{
 			System.out.println("No se ha podido eliminar la Decoración.");
 		}
+		return decoracion;
 	}
 
 	//Metodos de valores
@@ -280,14 +303,20 @@ public class Floristeria {
 		System.out.println("El valor actual de " + nombre + " es de " + valorTotal + "€.");
 	}
 
-	//Método guardar tiquet
-	public void almacenarTicket(List <Producto> producto) {
+	/**
+	 * Se almacena en un map el arrayList de productos
+	 * 
+	 * @param producto
+	 */
+	public void almacenarTicket(List <Producto> productos) {
         idStatic++;
         idMap = idStatic;
-        tickets.put(idMap, producto);
+        tickets.put(idMap, productos);
     }
 
-	//Método ver tiquets
+	/**
+	 * Se recorre el map tickets
+	 */
     public void verTickets() {
         if(tickets.size()== 0) {
             System.out.println("No existen tickets guardados");
@@ -298,6 +327,44 @@ public class Floristeria {
         }
     }
 	
+    /**
+     * Se almacena en un arrayList el nombre de los
+     * tickets impresos
+     * 
+     * @param nombreTicket
+     */
+    public void almacenarNombreTicketsImpresos(String nombreTicket) {
+    	nombreTickets.add(nombreTicket);
+    }
+    
+    /**
+     * Lee el archivo .txt que desea el usuario.
+     */
+    public void verNombreTicketsImpresos() {
+		Scanner entrada = new Scanner(System.in);
+		
+		boolean existe = false;
+		
+		System.out.println("Qué ticket desea comprobar?");
+		
+    	nombreTickets.forEach(e-> System.out.println(e));
+    	
+    	String recogerNombreArchivo = entrada.nextLine();
+    	
+    	for (int i=0; i < nombreTickets.size();i++) {
+    		if(nombreTickets.get(i).equals(recogerNombreArchivo)) {
+    			existe = true;
+    		}
+    	}
+    	
+    	if(existe) {
+    		Archivo.leerTicket(recogerNombreArchivo);
+    	}else {
+    		System.out.println("El archivo no existe");
+    	}
+    	
+    }
+    
 	@Override
 	public String toString() {
 		return "Floristeria: " + this.nombre ;

@@ -53,7 +53,8 @@ public class Main {
 												break;
 											case 2:
 												//Elimina arbol de floristeria
-												floristeria.eliminarArbol();
+												Arbol arbol1 = floristeria.eliminarArbol();
+												ticket.eliminaArbolTicket(arbol1);
 												break;
 											case 3:
 												//Añade arboles al ticket y floristeria
@@ -61,14 +62,16 @@ public class Main {
 												ticket.decoracionTicket(decoracion);
 												break;
 											case 4:
-												floristeria.eliminarDecoracion();
+												Decoracion decoracion1 = floristeria.eliminarDecoracion();
+												ticket.eliminaDecoracionTicket(decoracion1);
 												break;
 											case 5:
 												Flor flor = floristeria.anadirFlor();
 												ticket.floresTicket(flor);
 												break;
 											case 6:
-												floristeria.eliminarFlor();
+												Flor flor1 = floristeria.eliminarFlor();
+												ticket.eliminaFlorTicket(flor1);
 												break;
 											case 7:
 												ticket.verTicket();
@@ -79,6 +82,7 @@ public class Main {
 												//Para imprimir el ticket
 												try {
 													ticket.imprimirTicket(floristeria);
+													floristeria.almacenarNombreTicketsImpresos(ticket.getNombreTicket());
 												} catch (IOException e) {
 													e.printStackTrace();
 												}
@@ -174,9 +178,10 @@ public class Main {
 								case 5:
 									//Mostrar ventas anteriores
 									floristeria.verTickets();
+									break;
 								case 6:
 									//Buscar ticket ya impreso
-
+									floristeria.verNombreTicketsImpresos();
 									break;
 								case 0:
 									break;

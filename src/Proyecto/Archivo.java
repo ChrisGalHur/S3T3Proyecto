@@ -2,17 +2,25 @@ package Proyecto;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.Map;
 
-
+/**
+ * Clase Archivo
+ * 
+ * Contiene métodos estáticos para imprimir y leer
+ * archivos .txt
+ */
 public class Archivo {
 	
-	//Método guardar ticket
+	/**
+	 * Genera un archivo .txt
+	 * 
+	 * @param ticket
+	 * @param nombreTicket
+	 */
     static void guardarTicket(List<Producto> ticket, String nombreTicket) {
         FileWriter fichero = null;
         PrintWriter pw = null;
@@ -39,7 +47,12 @@ public class Archivo {
         }
     }
 	
-	//Leer ticket
+	/**
+	 * Lee un archivo .txt a partir del nombre que se le
+	 * pasa como parámetro
+	 * 
+	 * @param path
+	 */
 	static void leerTicket(String path) {
 		File archivo = null;
 	    FileReader fr = null;
@@ -50,7 +63,7 @@ public class Archivo {
 	    	fr = new FileReader (archivo);
 	        br = new BufferedReader(fr);
 	        
-	         // Lectura del fitxer
+	         // Lectura del fichero
 	         String linea;
 	         while((linea=br.readLine())!=null) {
 	        	System.out.println(linea);

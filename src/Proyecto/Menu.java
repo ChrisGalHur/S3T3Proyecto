@@ -2,16 +2,27 @@ package Proyecto;
 
 import java.util.Scanner;
 
+/**
+ * Clase Menu
+ * Se han creado todos los menús y submenús necesarios que serán usados en la aplicación.
+ * @author Ismael, Pilar y Christian.
+ *
+ */
 public class Menu {
 
-	static int menuFloristeria() {
+	/**
+	 * Menu de panel de control de floristerías.
+	 * @return número de opción relacionado con el menú.
+	 * Se convierte una cadena de texto en un número entero para que cualquier carácter sea reconocido como Integer para poder lanzar el error de comando erroneo.
+	 */
+	public static int menuFloristeria() {
 		Scanner entrada = new Scanner(System.in);
 		int opcion;
 
 		System.out.println(" \n"
 				+ "PANEL DE CONTROL DE FLORISTERIAS: \n" 
 				+ "1. Crear floristería. \n" 
-				+ "2. Mostrar floristería. \n"
+				+ "2. Mostrar iformación floristería. \n"
 				+ "3. Eliminar floristería. \n"
 				+ "4. Opciones de floristería. \n" 
 				+ "0. Salir del programa. \n");
@@ -22,7 +33,12 @@ public class Menu {
 		
 	}
 	
-	static int menuOpcionesFloristeria() {
+	/**
+	 * Menu de panel de opciones de floristería.
+	 * @return número de opción relacionado con el menú.
+	 * Se convierte una cadena de texto en un número entero para que cualquier carácter sea reconocido como Integer para poder lanzar el error de comando erroneo.
+	 */
+	public static int menuOpcionesFloristeria() {
 		Scanner entrada = new Scanner(System.in); 
 		
 		int opcion;
@@ -42,7 +58,12 @@ public class Menu {
 		return opcion;
 	}
 	
-	static int menuProductos() {
+	/**
+	 * Menu de panel de opciones de productos.
+	 * @return número de opción relacionado con el menú.
+	 * Se convierte una cadena de texto en un número entero para que cualquier carácter sea reconocido como Integer para poder lanzar el error de comando erroneo.
+	 */
+	public static int menuProductos() {
 		Scanner entrada = new Scanner(System.in);
 		
 		int opcion;
@@ -63,7 +84,12 @@ public class Menu {
 		return opcion;
 	}
 	
-	static int menuCantidadesStock() {
+	/**
+	 * Menu de panel de opciones de stock de floristería.
+	 * @return número de opción relacionado con el menú.
+	 * Se convierte una cadena de texto en un número entero para que cualquier carácter sea reconocido como Integer para poder lanzar el error de comando erroneo.
+	 */
+	public static int menuCantidadesStock() {
 		Scanner entrada = new Scanner(System.in);
 		
 		int opcion;
@@ -81,7 +107,12 @@ public class Menu {
 		return opcion;
 	}
 	
-	static int menuMostrarStock() {
+	/**
+	 * Menu de panel de opciones para mostrar productos de floristería.
+	 * @return número de opción relacionado con el menú.
+	 * Se convierte una cadena de texto en un número entero para que cualquier carácter sea reconocido como Integer para poder lanzar el error de comando erroneo.
+	 */
+	public static int menuMostrarStock() {
 		Scanner entrada = new Scanner(System.in);
 		
 		int opcion;

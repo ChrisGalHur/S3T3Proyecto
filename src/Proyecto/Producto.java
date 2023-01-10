@@ -1,14 +1,40 @@
 package Proyecto;
 
+/**
+ * Clase Producto
+ * Contiene los atributos ID, nombre y precio.
+ * Es padre de las clases, Arbol, Flor y Decoración.
+ * @author Ismael, Pilar y Christian.
+ * @see Arbol
+ * @see Flor
+ * @see Decoracion 
+ */
 public class Producto {
 
 	//Atributos
+	/**
+	 * Número ID para un producto.
+	 */
 	private int idProducto;
+	/**
+	 * Número ID que se utilizará para el "autoincrement" para un producto.
+	 */
 	private static int idSiguienteProducto = 0;
+	/**
+	 * nombre o tipo de producto.
+	 */
 	private String nombre;
+	/**
+	 * precio del producto.
+	 */
 	private double precio;
 	
 	//Constructores
+	/**
+	 * Constructor con 2 parámetros.
+	 * @param nombre nombre o tipo de producto.
+	 * @param precio precio del producto.
+	 */
 	public Producto(String nombre, double precio) {
 		this.idSiguienteProducto++;
 		this.idProducto = this.idSiguienteProducto;

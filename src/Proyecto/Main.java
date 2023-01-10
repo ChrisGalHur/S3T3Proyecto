@@ -2,15 +2,32 @@ package Proyecto;
 
 import java.io.IOException;
 import java.util.List;
-
+/**
+ * Clase Main
+ * Aplicación para crear una o varias floristerías y añadir productos.
+ * @author Ismael, Pilar y Christian.
+ *
+ */
 public class Main {
 
-	
+	/**
+	 * 
+	 * @param args punto de entrada para la ejecución de la aplicación.
+	 */
 	public static void main(String[] args) {
 
+		/**
+		 * Objeto utilizado para la llamada de los objetos de la clase FloristeriaContenedor.
+		 */
 		FloristeriaContenedor llamadaObjetosFloristeriaContenedor = new FloristeriaContenedor();
 
+		/**
+		 * Objeto de la clase Floristeria que sera utilizado para fijar la floristería elegida por el usuario.
+		 */
 		Floristeria floristeria;
+		/**
+		 * opciones utilizadas en el menú de la aplicación.
+		 */
 		int opcion = 0, opcionFloristeria = 0, opcionProductos = 0, opcionStocksCantidades = 0, opcionStocks = 0;
 
 		do {
@@ -23,8 +40,8 @@ public class Main {
 					llamadaObjetosFloristeriaContenedor.crearFloristeria();
 					break;
 				case 2:
-					System.out.println("MOSTRAR FLORISTERÍAS");
-					llamadaObjetosFloristeriaContenedor.mostrarFloristerias();
+					System.out.println("MOSTRAR INFORMACIÓN FLORISTERÍA");
+					llamadaObjetosFloristeriaContenedor.mostrarFloristeria();
 					break;
 				case 3:
 					System.out.println("ELIMINAR FLORISTERÍA");
@@ -53,7 +70,8 @@ public class Main {
 												break;
 											case 2:
 												//Elimina arbol de floristeria
-												floristeria.eliminarArbol();
+												Arbol arbol1 = floristeria.eliminarArbol();
+												ticket.eliminaArbolTicket(arbol1);
 												break;
 											case 3:
 												//Añade arboles al ticket y floristeria
@@ -61,26 +79,32 @@ public class Main {
 												ticket.decoracionTicket(decoracion);
 												break;
 											case 4:
-												floristeria.eliminarDecoracion();
+												Decoracion decoracion1 = floristeria.eliminarDecoracion();
+												ticket.eliminaDecoracionTicket(decoracion1);
 												break;
 											case 5:
 												Flor flor = floristeria.anadirFlor();
 												ticket.floresTicket(flor);
 												break;
 											case 6:
-												floristeria.eliminarFlor();
+												Flor flor1 = floristeria.eliminarFlor();
+												ticket.eliminaFlorTicket(flor1);
 												break;
 											case 7:
 												ticket.verTicket();
 												break;
 											case 0:
 												List <Producto> ticketMain = ticket.getTicket();
+												if(ticketMain.size() != 0) {
 												floristeria.almacenarTicket(ticketMain);
+												
 												//Para imprimir el ticket
 												try {
-													ticket.imprimirTicket();
+													ticket.imprimirTicket(floristeria);
+													floristeria.almacenarNombreTicketsImpresos(ticket.getNombreTicket());
 												} catch (IOException e) {
 													e.printStackTrace();
+												}
 												}
 												break;
 											default:
@@ -99,23 +123,17 @@ public class Main {
 										switch(opcionStocks) {
 										
 										case 1:
-											System.out.println("INVENTARIO DE ÁRBOLES");
 											floristeria.mostrarArboles();
 											break;
 										case 2:
-											System.out.println("INVENTARIO DE FLORES");
 											floristeria.mostrarFlores();
 											break;
 										case 3:
-											System.out.println("INVENTARIO DE DECORACIONES");
 											floristeria.mostrarDecoraciones();
 											break;
 										case 4:
-											System.out.println("INVENTARIO DE ÁRBOLES");
 											floristeria.mostrarArboles();
-											System.out.println("INVENTARIO DE FLORES");
 											floristeria.mostrarFlores();
-											System.out.println("INVENTARIO DE DECORACIONES");
 											floristeria.mostrarDecoraciones();
 											break;
 										case 0:
@@ -168,15 +186,16 @@ public class Main {
 								
 									break;
 								case 4:
-									//Mostrar valor total de la floristería
+									System.out.println("VALOR TOTAL DE LA FLORISTERÍA");
 									floristeria.calcularValorTotal();
 									break;
 								case 5:
 									//Mostrar ventas anteriores
 									floristeria.verTickets();
+									break;
 								case 6:
 									//Buscar ticket ya impreso
-
+									floristeria.verNombreTicketsImpresos();
 									break;
 								case 0:
 									break;

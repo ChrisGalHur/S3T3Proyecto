@@ -8,11 +8,22 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Clase Archivo
+ * 
+ * Contiene los métodos necesarios para guardar un ticket y leer un ticket.
+ * @author Ismael, Pilar y Christian.
+ *
+ */
 
 public class Archivo {
 	
 	//Método guardar ticket
+	/**
+	 * Método para imprimir un ticket con una lista de productos.
+	 * @param ticket ticket con la venta para imprimir.
+	 * @param nombreTicket nombre del ticket.
+	 */
     static void guardarTicket(List<Producto> ticket, String nombreTicket) {
         FileWriter fichero = null;
         PrintWriter pw = null;
@@ -25,7 +36,7 @@ public class Archivo {
                 pw.println(p);
             }
 
-            System.out.println("Ticket impreso");
+            //System.out.println("Ticket impreso");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -40,6 +51,10 @@ public class Archivo {
     }
 	
 	//Leer ticket
+    /**
+     * Método para encontrar un ticket y leerlo.
+     * @param path ticket a leer.
+     */
 	static void leerTicket(String path) {
 		File archivo = null;
 	    FileReader fr = null;
